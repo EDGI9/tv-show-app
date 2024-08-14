@@ -1,5 +1,5 @@
 <template>
-    <button data-testid="qa-button">{{ text  }}</button>
+    <button @click="$emit('click')" data-testid="qa-button">{{ text  }}</button>
 </template>
 
 <script setup lang="ts">
