@@ -2,20 +2,32 @@
 import { TextComponent, ImageComponent } from "./Components";
 
 export type ShowDTO = {
-    name: TextComponent
-    summary: TextComponent
-    image: ImageComponent
-}
-
-export type Show = {
-    name: TextComponent
-    summary: TextComponent
-    image: ImageComponent
-    episodes: object[]
+    id: string
+    name: string
+    summary: string
+    image: {original: string}
 }
 
 export type EpisodeDTO = {
-    title: TextComponent
-    description: TextComponent
-    image: ImageComponent
+    id: string
+    name: string
+    summary: string
+    image: {original: string}
+    season: string
+}
+
+export type Show = {
+    id: string
+    name: string
+    summary: string
+    image: string
+    episodes: object[Episode]
+}
+
+export type Episode = {
+    id: string
+    name: string
+    summary: string
+    image: string
+    season: string
 }
