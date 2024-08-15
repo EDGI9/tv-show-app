@@ -18,10 +18,19 @@ const actions = {
     },
 }
 
+const getters = {
+    EPISODES (state) {
+        console.log(state, state.show);
+        
+        return state.show.episodes
+    }
+}
+
 
 const showStore = {
   namespaced: true,
   state,
+  getters,
   mutations,
   actions
 };
