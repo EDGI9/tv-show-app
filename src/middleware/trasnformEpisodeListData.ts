@@ -1,6 +1,6 @@
 import { EpisodeDTO , Episode} from "../interfaces/Data";
 
-export function transformEpisodeData(data: any): Episode | []{
+export function transformEpisodeListData(data: any): Episode | []{
     if (!data) {
         return []
     }
