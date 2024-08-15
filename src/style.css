@@ -63,6 +63,8 @@ button:focus-visible {
   margin: 0 auto;
   text-align: center;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 @media (prefers-color-scheme: light) {
