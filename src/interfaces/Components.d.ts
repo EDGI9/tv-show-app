@@ -1,3 +1,5 @@
+import { Episode } from "./Data";
+
 type Title = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 type NavItem = {
     text: string
@@ -27,5 +29,9 @@ export type ImageComponent = {
 export type ButtonComponent = {
     text: string
     onClick: (event: MouseEvent) => void;
+};
+
+export type EpisodeCard = {
+    data: Episode
 };
 
