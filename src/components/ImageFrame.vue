@@ -3,11 +3,12 @@
 </template>
 
 <script setup lang="ts">
+import { toRefs } from 'vue';
 import { ImageComponent } from "../interfaces/Components";
 
 const props = defineProps<ImageComponent>();
 
-const { src, alt, width, height } = props;
+const { src, alt, width, height } = toRefs(props);
 </script>
 
 <style lang="">

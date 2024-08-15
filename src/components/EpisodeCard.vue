@@ -36,6 +36,7 @@
     </div>
 </template>
 <script setup lang="ts">
+    import { toRefs } from 'vue';
     import Description from '../components/Description.vue';
     import Title from '../components/Title.vue';
     import ImageFrame from '../components/ImageFrame.vue';
@@ -45,7 +46,7 @@
 
     const props = defineProps<EpisodeCard>();
 
-    const { data: Episode } = props;
+    const { data: Episode } = toRefs(props);
 
 </script>
 <style lang="css">
