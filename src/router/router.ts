@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import { useStore } from 'vuex';
 import BaseLayout from '../layouts/BaseLayout.vue';
 
+import Home from '../views/Home.vue';
 import Show from '../views/Show.vue';
 import Episode from '../views/Episode.vue';
 import MissingPage from '../views/MissingPage.vue';
@@ -9,20 +10,28 @@ import MissingPage from '../views/MissingPage.vue';
 const routes = [
   {
     path: '/',
-    redirect: '/shows',
+    name: 'Home',
+    component: BaseLayout,
+    children: [
+      {
+        path: '',
+        name: 'HomeChild',
+        component: Home,
+      },
+    ]
   },
   {
-    path: '/shows',
+    path: '/shows/:id',
     name: 'Shows',
     component: BaseLayout,
     children: [
       {
-        path: ':id',
+        path: '',
         name: 'Show',
         component: Show,
       },
       {
-        path: ':id/episodebynumber',
+        path: 'episodebynumber',
         name: 'Episode',
         component: Episode,
         props: route => ({
@@ -33,9 +42,16 @@ const routes = [
     ]
   },
   {
-    path: '/404',
-    name: 'Shows',
-    component: MissingPage,
+    path: '/error',
+    name: 'Error',
+    component: BaseLayout,
+    children: [
+      {
+        path: '',
+        name: 'MissingPage',
+        component: MissingPage,
+      },
+    ]
   },
 ];
 
@@ -47,11 +63,13 @@ const router = createRouter({
 router.beforeEach(async (to, from, next) => {
   const store = useStore();
   try {
+    if (!to.name) {
+      next("/error"); 
+    }
+
     if (to.name === 'Show' && to.params.id) {
       await store.dispatch('showStore/GET_SHOW', to.params.id);
-    } else {
-      // next("/404"); 
-    }
+    } 
 
     if (to.name === 'Episode' && to.params.id && to.query.season && to.query.number) {
       const params = {
@@ -60,14 +78,12 @@ router.beforeEach(async (to, from, next) => {
         episodeId: to.query.number
       };
       await store.dispatch('episodeStore/GET_EPISODE', params);
-    } else {
-      // next("/404"); 
     }
-
+    
     next();
   } catch (error) {
     console.error('Error during navigation:', error);
-    next(false);
+    next("/error"); 
   }
 });
 
