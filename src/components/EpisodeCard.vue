@@ -1,32 +1,32 @@
 <template lang="">
-    <div v-if="data.id" class="c_episode-card">
+    <div v-if="data.id" data-testid="qa-episode-card" class="c_episode-card">
         <div class="c_episode-card_image-container">
             <div class="c_episode-card_image-container_image">
-                <ImageFrame :src="data.image" :alt="data.name" class="c_episode-card_image-container_image_image"/>
+                <ImageFrame :src="data.image" :alt="data.name" class="c_episode-card_image-container_image_image" data-testid="qa-episode-card_image" />
             </div>
-            <div class="c_episode-card_image-container_rating">
+            <div class="c_episode-card_image-container_rating" data-testid="qa-episode-card_rating" >
                 <p>{{data.rating}}</p>
             </div>
         </div>
         <div class="c_episode-card_information-container">
             <div class="c_episode-card_information-container_title">
-                <Title :text="data.name" type="h2" />
+                <Title :text="data.name" type="h2" data-testid="qa-episode-card_title"  />
             </div>
             <div class="c_episode-card_information-container_summary">
-                <Description :text="data.summary"/>
+                <Description :text="data.summary" data-testid="qa-episode-card_summary" />
             </div>
             <div class="c_episode-card_information-container_other-information">
                 <div>
                     <Title text="Season" type="h4"/>
-                    <p>{{data.season}}</p>
+                    <p data-testid="qa-episode-card_season" >{{data.season}}</p>
                 </div>
                 <div>
                     <Title text="Air Date" type="h4"/>
-                    <p>{{data.airdate}}</p>
+                    <p data-testid="qa-episode-card_airdate" >{{data.airdate}}</p>
                 </div>
                 <div>
                     <Title text="Runtime" type="h4"/>
-                    <p>{{data.runtime}}</p>
+                    <p data-testid="qa-episode-card_runtime" >{{data.runtime}}</p>
                 </div>
             </div>
         </div>
