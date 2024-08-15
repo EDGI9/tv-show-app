@@ -1,36 +1,38 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import BaseLayout from '../layouts/BaseLayout.vue';
+import { useStore } from 'vuex';
 
-import Show from '../views/Show.vue';
-import Episode from '../views/Episode.vue';
-
-const routes = [
-  {
-    path: '/',
-    redirect: '/shows',
-  },
-  {
-    path: '/shows',
-    name: 'Shows',
-    component: BaseLayout,
-    children: [
-        {
-            path: ':id',
-            name: 'Show',
-            component: Show,
-        },
-        {
-            path: ':id/episode',
-            name: 'Episode',
-            component: Episode,
-        },
-    ]
-  },
-];
+import routes from "./routes";
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
+});
+
+router.beforeEach(async (to, from, next) => {
+  const store = useStore();
+  try {
+    if (!to.name) {
+      next("/error"); 
+    }
+
+    if (to.name === 'Show' && to.params.id) {
+      await store.dispatch('showStore/GET_SHOW', to.params.id);
+    } 
+
+    if (to.name === 'Episode' && to.params.id && to.query.season && to.query.number) {
+      const params = {
+        id: to.params.id,
+        seasonId: to.query.season,
+        episodeId: to.query.number
+      };
+      await store.dispatch('episodeStore/GET_EPISODE', params);
+    }
+    
+    next();
+  } catch (error) {
+    console.error('Error during navigation:', error);
+    next("/error"); 
+  }
 });
 
 export default router;
