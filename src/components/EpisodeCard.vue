@@ -5,15 +5,13 @@
                 <ImageFrame :src="data.image" :alt="data.name" class="c_episode-card_image-container_image_image" data-testid="qa-episode-card_image" />
             </div>
             <div class="c_episode-card_image-container_rating" data-testid="qa-episode-card_rating" >
+                <Title text="Rating" type="h4"/>
                 <p>{{data.rating}}</p>
             </div>
         </div>
         <div class="c_episode-card_information-container">
             <div class="c_episode-card_information-container_title">
                 <Title :text="data.name" type="h2" data-testid="qa-episode-card_title"  />
-            </div>
-            <div class="c_episode-card_information-container_summary">
-                <Description :text="data.summary" data-testid="qa-episode-card_summary" />
             </div>
             <div class="c_episode-card_information-container_other-information">
                 <div>
@@ -28,6 +26,9 @@
                     <Title text="Runtime" type="h4"/>
                     <p data-testid="qa-episode-card_runtime" >{{data.runtime}}</p>
                 </div>
+            </div>
+            <div class="c_episode-card_information-container_summary">
+                <Description :text="data.summary" data-testid="qa-episode-card_summary" />
             </div>
         </div>
     </div>
@@ -71,16 +72,36 @@
     .c_episode-card_image-container_image_image {
         height: 100%;
     }
-    .c_episode-card_image-container_rating{}
     .c_episode-card_information-container{
         display: flex;
         flex-direction: column;
     }
-    .c_episode-card_information-container_title{}
-    .c_episode-card_information-container_summary{}
-    .c_episode-card_information-container_other-information{
+    .c_episode-card_information-container_title{
+        display: flex;
+        align-items: top;
+        justify-content: start;
+    }
+    .c_episode-card_information-container_title > *{
+        margin-bottom: 0px
+    }
+    
+    .c_episode-card_information-container_summary{
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        text-align: start;
+        margin-top: 30px;
+    }
+    .c_episode-card_information-container_other-information {
         display: flex;
         flex-direction: row;
-        gap: 20px;
+        gap: 40px;
+    }
+    .c_episode-card_image-container_rating, .c_episode-card_information-container_other-information > * {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        gap: 10px;
     }
 </style>
