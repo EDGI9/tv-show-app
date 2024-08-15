@@ -19,6 +19,8 @@ export type NavComponent = {
 
 export type ImageComponent = {
     src: string
+    width?: string
+    height?: string
     alt?: string
 };
 
