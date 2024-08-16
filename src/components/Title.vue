@@ -1,5 +1,7 @@
 <template>
-    <component :is='type' data-testid="qa-title" class="c_title">{{ text }}</component>
+    <div class="prose prose-headings:font-bold prose-headings:text-primary">
+        <component :is='type' data-testid="qa-title" class="my-5">{{ text }}</component>
+    </div>
 </template>
 
 <script setup lang="ts">
@@ -12,7 +14,4 @@ const { text, type } = toRefs(props);
 </script>
 
 <style lang="css">
-    .c_title {
-        margin: 10px 0;
-    }
 </style>
