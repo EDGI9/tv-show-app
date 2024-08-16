@@ -5,7 +5,7 @@
     </div>
 </template>
 <script setup lang="ts">
-    import { useStore, mapGetters } from 'vuex';
+    import { useStore } from 'vuex';
     import { computed } from 'vue';
     import { useRouter, useRoute } from 'vue-router'
     import EpisodeCard from '../components/EpisodeCard.vue';
