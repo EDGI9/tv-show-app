@@ -1,33 +1,35 @@
 <template lang="">
-    <div v-if="data.id" data-testid="qa-episode-card" class="c_episode-card">
-        <div class="c_episode-card_image-container">
-            <div class="c_episode-card_image-container_image">
-                <ImageFrame :src="data.image" :alt="data.name" class="c_episode-card_image-container_image_image" data-testid="qa-episode-card_image" />
+    <div v-if="data.id" data-testid="qa-episode-card" class="flex flex-col md:flex-row gap-16 max-w-screen-xl">
+        <div class="flex flex-col">
+            <div class="flex items-center justify-center overflow-hidden rounded-lg drop-shadow-lg w-[400px] h-[500px]">
+                <ImageFrame :src="data.image" :alt="data.name" data-testid="qa-episode-card_image" class="h-full" />
             </div>
-            <div class="c_episode-card_image-container_rating" data-testid="qa-episode-card_rating" >
-                <Title text="Rating" type="h4"/>
-                <p>{{data.rating}}</p>
+            <div class="flex flex-row items-center justify-center" >
+                <Title text="Rating" type="h2" class="me-2"/>
+                <div data-testid="qa-episode-card_rating" >
+                    <p>{{data.rating}}</p>
+                </div>
             </div>
         </div>
-        <div class="c_episode-card_information-container">
-            <div class="c_episode-card_information-container_title">
+        <div class="flex flex-col">
+            <div class="flex items-center justify-start text-secondary">
                 <Title :text="data.name" type="h2" data-testid="qa-episode-card_title"  />
             </div>
-            <div class="c_episode-card_information-container_other-information">
-                <div>
-                    <Title text="Season" type="h4"/>
+            <div class="flex flex-row items-center justify-start gap-7">
+                <div class="flex flex-row justify-center items-center gap-2">
+                    <Title text="Season" type="h4" class="text-secondary"/>
                     <p data-testid="qa-episode-card_season" >{{data.season}}</p>
                 </div>
-                <div>
-                    <Title text="Air Date" type="h4"/>
+                <div class="flex flex-row justify-center items-center gap-2">
+                    <Title text="Air Date" type="h4" class="text-secondary"/>
                     <p data-testid="qa-episode-card_airdate" >{{data.airdate}}</p>
                 </div>
-                <div>
-                    <Title text="Runtime" type="h4"/>
+                <div class="flex flex-row justify-center items-center gap-2">
+                    <Title text="Runtime" type="h4" class="text-secondary"/>
                     <p data-testid="qa-episode-card_runtime" >{{data.runtime}}</p>
                 </div>
             </div>
-            <div class="c_episode-card_information-container_summary">
+            <div class="flex flex-row items-start justify-start text-start mt-5">
                 <Description :text="data.summary" data-testid="qa-episode-card_summary" />
             </div>
         </div>
@@ -51,57 +53,5 @@
 
 </script>
 <style lang="css">
-    .c_episode-card{
-        display: flex;
-        flex-direction: row;
-        gap: 50px;
-        max-width: 1200px;
-    }
-    .c_episode-card_image-container{
-        display: flex;
-        flex-direction: column;
-    }
-    .c_episode-card_image-container_image{
-        width: 400px;
-        height: 500px;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .c_episode-card_image-container_image_image {
-        height: 100%;
-    }
-    .c_episode-card_information-container{
-        display: flex;
-        flex-direction: column;
-    }
-    .c_episode-card_information-container_title{
-        display: flex;
-        align-items: top;
-        justify-content: start;
-    }
-    .c_episode-card_information-container_title > *{
-        margin-bottom: 0px
-    }
-    
-    .c_episode-card_information-container_summary{
-        display: flex;
-        align-items: start;
-        justify-content: start;
-        text-align: start;
-        margin-top: 30px;
-    }
-    .c_episode-card_information-container_other-information {
-        display: flex;
-        flex-direction: row;
-        gap: 40px;
-    }
-    .c_episode-card_image-container_rating, .c_episode-card_information-container_other-information > * {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: row;
-        gap: 10px;
-    }
+
 </style>

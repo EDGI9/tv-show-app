@@ -1,32 +1,24 @@
 <template lang="">
-    <div class="c_episode-page">
-        <label for="cars">Choose a car:</label>
-        <select name="cars" id="cars" @change="changeEpisode($event)">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-        </select>
+    <div class="grid flex-col items-center justify-start p-24 h-full">
+        <List :items="episodeList" :callback="changeEpisode" class="justify-self-end mb-3"/>
         <EpisodeCard :data="episode"/>
-        {{episodeList}}
-        <br>
     </div>
 </template>
 <script setup lang="ts">
-    import { useStore } from 'vuex';
+    import { useStore, mapGetters } from 'vuex';
     import { computed } from 'vue';
     import { useRouter, useRoute } from 'vue-router'
     import EpisodeCard from '../components/EpisodeCard.vue';
-    
+    import List from '../components/List.vue';
+
+
+    import { Episode } from "../interfaces/Data";
 
     const store = useStore();
     const episode = computed(() => store.state.episodeStore.episode);
-    const episodeList = computed(() => store.getters.showStore); //FIX ME
-
+    const episodeList = computed(() => store.getters['showStore/EPISODES'].map((item: Episode) => ({id: item.id, text: `Episode ${item.id}`})));
     const router = useRouter();
     const route = useRoute();
-    console.log(episodeList);
-    
 
     function changeEpisode(event): void {
         router.push({
@@ -39,15 +31,6 @@
         });
     }
 
-   
 </script>
 <style lang="css">
-    .c_episode-page {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: start;
-        padding-top: 60px;
-        height: 100%;
-    }
 </style>
