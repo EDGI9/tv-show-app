@@ -1,6 +1,6 @@
 <template lang="">
     <header class="flex gap-12 px-12 items-center shadow-md">
-      <ImageFrame src="/logo.svg" class="w-10 h-10"/>
+      <ImageFrame :src="Logo" class="w-10 h-10"/>
       <div class="flex flex-row gap-2">
         <Title text="Flick" type="h2" class="prose prose-headings:text-black"/>
         <Title text="Flow" type="h2" class="text-primary"/>
@@ -20,6 +20,7 @@
 <script setup>
     import Title from '../components/Title.vue';
     import ImageFrame from '../components/ImageFrame.vue';
+    import Logo from "../assets/logo.svg";
 </script>
 <style lang="css">
 
