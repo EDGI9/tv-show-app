@@ -13,6 +13,7 @@ const routes = [
         {
           path: '',
           name: 'HomeChild',
+          meta: { transition: 'fade' },
           component: Home,
         },
       ]
@@ -26,11 +27,13 @@ const routes = [
           path: '',
           name: 'Show',
           component: Show,
+          meta: { transition: 'fade' },
         },
         {
           path: 'episodebynumber',
           name: 'Episode',
           component: Episode,
+          meta: { transition: 'fade' },
           props: route => ({
             season: route.query.season,
             episode: route.query.number,
@@ -47,6 +50,7 @@ const routes = [
           path: '',
           name: 'MissingPage',
           component: MissingPage,
+          meta: { transition: 'fade' },
         },
       ]
     },

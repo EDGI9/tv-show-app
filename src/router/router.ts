@@ -25,6 +25,7 @@ router.beforeEach(async (to, from, next) => {
         seasonId: to.query.season,
         episodeId: to.query.number
       };
+      await store.dispatch('showStore/GET_SHOW', to.params.id);
       await store.dispatch('episodeStore/GET_EPISODE', params);
     }
     

@@ -1,5 +1,4 @@
 import { fetchShow } from '../../services/showApi.ts';
-import { Show } from "../../interfaces/Data.d.ts";
 
 const state = {
     show: {}
@@ -18,10 +17,20 @@ const actions = {
     },
 }
 
+const getters = {
+    SHOW (state) {
+        return state.show
+    },
+    EPISODES (state) {
+        return state.show.episodes
+    }
+}
+
 
 const showStore = {
   namespaced: true,
   state,
+  getters,
   mutations,
   actions
 };

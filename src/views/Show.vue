@@ -3,7 +3,7 @@
         <template v-if="show.id">
             <Title :text="show.name" type="h2" />
             <Description :text="show.summary"/>
-            <!-- <router-link to="1/episode">Test Episode 1</router-link> -->
+           <router-link to="/shows/1/episodebynumber?season=1&number=1">To especific test show</router-link>
 
         </template>
     </div>
@@ -17,7 +17,7 @@
     import Title from '../components/Title.vue';
 
     const store = useStore();
-    const show = computed(() => store.state.showStore.show);
+    const show = computed(() => store.getters['showStore/SHOW']);
 </script>
 <style lang="">
     

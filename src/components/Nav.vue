@@ -9,11 +9,12 @@
 </template>
 
 <script setup lang="ts">
+import { toRefs } from 'vue';
 import { NavComponent } from "../interfaces/Components";
 
 const props = defineProps<NavComponent>();
 
-const { items } = props;
+const { items } = toRefs(props);
 </script>
 
 <style lang="">

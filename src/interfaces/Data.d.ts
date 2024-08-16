@@ -14,6 +14,9 @@ export type EpisodeDTO = {
     summary: string
     image: {original: string}
     season: string
+    airdate: string
+    runtime: number
+    rating: {average: number}
 }
 
 export type Show = {
@@ -30,4 +33,7 @@ export type Episode = {
     summary: string
     image: string
     season: string
+    airdate: string
+    runtime: number
+    rating: number
 }

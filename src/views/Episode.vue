@@ -1,22 +1,43 @@
 <template lang="">
-    <div>
-        <template v-if="episode.id">
-            <Title :text="episode.name" type="h2" />
-            <Description :text="episode.summary"/>
-            <!--<router-link to="/shows/1">Test Show 1</router-link>-->
-        </template>
+    <div class="grid flex-col items-center justify-start p-24 h-full">
+        <div class="flex flex-row justify-between items-center mb-10">
+            <Title :text="show.name" type="h1"/>
+            <List :items="episodeList" :callback="changeEpisode"/>
+        </div>
+        <transition name="fade" mode="out-in">
+            <EpisodeCard :key="episode.id"  :data="episode"/>
+        </transition>
     </div>
 </template>
-<script setup>
+<script setup lang="ts">
     import { useStore } from 'vuex';
     import { computed } from 'vue';
-    import Description from '../components/Description.vue';
+    import { useRouter, useRoute } from 'vue-router';
     import Title from '../components/Title.vue';
+    import EpisodeCard from '../components/EpisodeCard.vue';
+    import List from '../components/List.vue';
+
+
+    import { Episode } from "../interfaces/Data";
 
     const store = useStore();
-    const episode = computed(() => store.state.episodeStore.episode);
+    const show = computed(() => store.getters['showStore/SHOW']);
+    const episode = computed(() => store.getters['episodeStore/EPISODE']);
+    const episodeList = computed(() => store.getters['showStore/EPISODES'].map((item: Episode) => ({id: item.id, text: `Episode ${item.id}`})));
+    const router = useRouter();
+    const route = useRoute();
+
+    function changeEpisode(event): void {
+        router.push({
+            path: route.path,
+            query: {
+                season: route.query.season,
+                number: event.target.value
+            }
+
+        });
+    }
 
 </script>
-<style lang="">
-    
+<style lang="css">
 </style>

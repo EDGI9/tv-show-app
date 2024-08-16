@@ -2,28 +2,19 @@ import { describe, it, expect, beforeEach } from 'vitest';
 import { mount } from '@vue/test-utils';
 import NavComponent from '../Nav.vue';
 
+import Nav  from "../../__mocks__/nav";
+
 describe('Description', () => {
 
     let wrapper; 
     let component;
     const props = {
-        items: [
-                {
-                    text:'Item 1', 
-                    href: "href 1"
-                },
-                {
-                    text:'Item 2', 
-                    href: "href 2"
-                },
-            ],
+        items: Nav
     }
 
     beforeEach(() => {
         wrapper = mount(NavComponent, {
-            props: {
-                items: props.items,
-            },
+            props: props,
         });
         component = wrapper.find('[data-testid="qa-nav"]');
     });
