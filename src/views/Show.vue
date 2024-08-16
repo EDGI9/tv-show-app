@@ -17,7 +17,7 @@
     import Title from '../components/Title.vue';
 
     const store = useStore();
-    const show = computed(() => store.state.showStore.show);
+    const show = computed(() => store.getters['showStore/SHOW']);
 </script>
 <style lang="">
     
