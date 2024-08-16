@@ -12,9 +12,7 @@ describe('Description', () => {
 
     beforeEach(() => {
         wrapper = mount(DescriptionComponent, {
-            props: {
-                text: props.text,
-            },
+            props: props,
         });
         component = wrapper.find('[data-testid="qa-description"]');
     });

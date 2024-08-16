@@ -14,9 +14,7 @@ describe('EpisodeCard', () => {
 
     beforeEach(() => {
         wrapper = mount(EpisodeCard, {
-            props: {
-                data: props.data,
-            },
+            props: props,
         });
         component = wrapper.find('[data-testid="qa-episode-card"]');
     });

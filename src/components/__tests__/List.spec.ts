@@ -1,22 +1,23 @@
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { mount } from '@vue/test-utils';
 import ListComponent from '../List.vue';
+
+import List  from "../../__mocks__/list";
 
 describe('List', () => {
 
     let wrapper; 
     let component;
     const props = {
-        text: '<h1 id="element">Custom Content</h1>',
+       items: List,
+       callback: vi.fn(),
     }
 
     beforeEach(() => {
         wrapper = mount(ListComponent, {
-            slots: {
-                default: props.text,
-            },
+            props: props,
         });
-        component = wrapper.find('[data-testid="qa-list"]');
+         component = wrapper.find('[data-testid="qa-list"]');
     });
 
     it('Renders the component', () => {
@@ -24,7 +25,18 @@ describe('List', () => {
     });
 
     it('Element is rendered inside slot', () => {
-        expect(component.find('#element').exists()).toBe(true);
+        const options = component.findAll('option');
+        expect(options).toHaveLength(props.items.length);
+        options.forEach((option, index) => {
+            expect(option.text()).toBe(props.items[index].text);
+            expect(option.element.value).toBe(props.items[index].id);
+        });
     });
+
+    it('Callback functino is triggered', async () => {
+        await component.trigger('change');
+        expect(props.callback).toHaveBeenCalled();
+    });
+
 
 });

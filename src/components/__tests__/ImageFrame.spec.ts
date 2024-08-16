@@ -13,10 +13,7 @@ describe('ImageFrame', () => {
 
     beforeEach(() => {
         wrapper = mount(ImageFrameComponent, {
-            props: {
-                src: props.src,
-                alt: props.alt
-            },
+            props: props,
         });
         component = wrapper.find('[data-testid="qa-image-frame"]');
     });

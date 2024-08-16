@@ -13,10 +13,7 @@ describe('Title', () => {
 
     beforeEach(() => {
         wrapper = mount(TitleComponent, {
-            props: {
-                text: props.text,
-                type: props.type
-            },
+            props: props,
         });
         component = wrapper.find('[data-testid="qa-title"]');
     });

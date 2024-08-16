@@ -13,10 +13,7 @@ describe('Button', () => {
 
     beforeEach(() => {
         wrapper = mount(ButtonComponent, {
-            props: {
-                text: props.text,
-                onClick: props.onClick,
-            },
+            props: props,
         });
         component = wrapper.find('[data-testid="qa-button"]');
     });
