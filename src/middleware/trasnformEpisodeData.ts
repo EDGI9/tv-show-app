@@ -1,4 +1,4 @@
-import { EpisodeDTO , Episode} from "../interfaces/Data";
+import { Episode} from "../interfaces/Data";
 
 export function transformEpisodeData(data: any): Episode | []{
     if (!data) {

@@ -1,13 +1,14 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import { mount } from '@vue/test-utils';
+import { mount, VueWrapper, DOMWrapper} from '@vue/test-utils';
+import { ComponentPublicInstance } from 'vue';
 import ListComponent from '../List.vue';
 
 import List  from "../../__mocks__/list";
 
 describe('List', () => {
 
-    let wrapper; 
-    let component;
+    let wrapper: VueWrapper<ComponentPublicInstance>;
+    let component: DOMWrapper<HTMLButtonElement>;
     const props = {
        items: List,
        callback: vi.fn(),

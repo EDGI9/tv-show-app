@@ -1,11 +1,12 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import { mount } from '@vue/test-utils';
+import { mount, VueWrapper, DOMWrapper} from '@vue/test-utils';
+import { ComponentPublicInstance } from 'vue';
 import TitleComponent from '../Title.vue';
 
 describe('Title', () => {
 
-    let wrapper; 
-    let component;
+    let wrapper: VueWrapper<ComponentPublicInstance>;
+    let component: DOMWrapper<HTMLButtonElement>;
     const props = {
         text: 'My Title',
         type: 'h1'
@@ -13,6 +14,7 @@ describe('Title', () => {
 
     beforeEach(() => {
         wrapper = mount(TitleComponent, {
+            //@ts-ignore
             props: props,
         });
         component = wrapper.find('[data-testid="qa-title"]');
