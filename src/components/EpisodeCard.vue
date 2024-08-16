@@ -1,8 +1,14 @@
 <template lang="">
     <div v-if="data.id" data-testid="qa-episode-card" class="flex flex-col md:flex-row gap-16 max-w-screen-xl">
         <div class="flex flex-col">
-            <div class="flex items-center justify-center overflow-hidden rounded-lg drop-shadow-lg w-[400px] h-[500px]">
-                <ImageFrame :src="data.image" :alt="data.name" data-testid="qa-episode-card_image" class="h-full" />
+            <div class="flex items-center justify-center relative rounded-lg shadow-lg w-[400px] h-[500px]">
+                
+                <div class="flex items-center justify-center overflow-hidden rounded-lg shadow-lg w-[400px] h-[500px] relative z-10">
+                    <ImageFrame :src="data.image" :alt="data.name" data-testid="qa-episode-card_image" class="h-full" />
+                </div>
+                <div class="w-[400px] h-[500px] bg-primary rounded-lg absolute shadow-lg z-0 rotate-3 opacity-50">
+                    asas
+                </div>
             </div>
             <div class="flex flex-row items-center justify-center" >
                 <Title text="Rating" type="h2" class="me-2"/>

@@ -1,5 +1,5 @@
 <template lang="">
-    <header class="flex gap-12 px-12 items-center">
+    <header class="flex gap-12 px-12 items-center shadow-md">
       <ImageFrame src="/logo.svg" class="w-10 h-10"/>
       <div class="flex flex-row gap-2">
         <Title text="Flick" type="h2" class="prose prose-headings:text-black"/>
