@@ -9,9 +9,11 @@ import Episode from '../views/Episode.vue';
 // @ts-ignore
 import MissingPage from '../views/MissingPage.vue';
 
+const baseUrl = import.meta.env.VITE_BASE_URL;
+
 const routes = [
     {
-      path: '/',
+      path: `${baseUrl}/`,
       name: 'Home',
       component: BaseLayout,
       children: [
@@ -24,7 +26,7 @@ const routes = [
       ]
     },
     {
-      path: '/shows/:id',
+      path: `${baseUrl}/shows/:id`,
       name: 'Shows',
       component: BaseLayout,
       children: [
@@ -48,7 +50,7 @@ const routes = [
       ]
     },
     {
-      path: '/error',
+      path: `${baseUrl}/error`,
       name: 'Error',
       component: BaseLayout,
       children: [

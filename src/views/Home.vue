@@ -2,7 +2,7 @@
     <div>
         <Title text="Show list page" type="h2" />
         <Description text="Show list"/>
-        <router-link to="shows/1">To especific show</router-link>
+        <router-link to="/tv-show-app/shows/1">To especific show</router-link>
     </div>
 </template>
 <script setup>
