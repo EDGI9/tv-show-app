@@ -5,12 +5,14 @@ const state = {
 };
 
 const mutations = {
+    //@ts-ignore
     SET_SHOW(state, payload) {
         state.show = payload;
     },
 }
 
 const actions = {
+    //@ts-ignore
     async GET_SHOW({ commit }, id: string) {
         const data = await fetchShow(id)
         commit('SET_SHOW', data);
@@ -18,9 +20,11 @@ const actions = {
 }
 
 const getters = {
+    //@ts-ignore
     SHOW (state) {
         return state.show
     },
+    //@ts-ignore
     EPISODES (state) {
         return state.show.episodes
     }

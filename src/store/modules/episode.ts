@@ -5,12 +5,14 @@ const state = {
 };
 
 const mutations = {
+    //@ts-ignore
     SET_EPISODE(state, payload) {
         state.episode = payload;
     },
 }
 
 const actions = {
+    //@ts-ignore
     async GET_EPISODE({ commit }, payload) {
         const data = await fetchEpisode(payload.id, payload.seasonId, payload.episodeId)
         commit('SET_EPISODE', data);
@@ -18,6 +20,7 @@ const actions = {
 }
 
 const getters = {
+    //@ts-ignore
     EPISODE (state) {
         return state.episode
     }

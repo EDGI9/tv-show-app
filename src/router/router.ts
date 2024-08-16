@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
+// @ts-ignore
 import { useStore } from 'vuex';
 
 import routes from "./routes";

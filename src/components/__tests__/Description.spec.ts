@@ -1,11 +1,12 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import { mount } from '@vue/test-utils';
+import { mount, VueWrapper, DOMWrapper} from '@vue/test-utils';
+import { ComponentPublicInstance } from 'vue';
 import DescriptionComponent from '../Description.vue';
 
 describe('Description', () => {
 
-    let wrapper; 
-    let component;
+    let wrapper: VueWrapper<ComponentPublicInstance>;
+    let component: DOMWrapper<HTMLButtonElement>;
     const props = {
         text: 'My Description',
     }

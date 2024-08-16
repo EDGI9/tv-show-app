@@ -1,13 +1,14 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import { mount } from '@vue/test-utils';
+import { mount, VueWrapper, DOMWrapper} from '@vue/test-utils';
+import { ComponentPublicInstance } from 'vue';
 import NavComponent from '../Nav.vue';
 
 import Nav  from "../../__mocks__/nav";
 
 describe('Description', () => {
 
-    let wrapper; 
-    let component;
+    let wrapper: VueWrapper<ComponentPublicInstance>;
+    let component: DOMWrapper<HTMLButtonElement>;
     const props = {
         items: Nav
     }

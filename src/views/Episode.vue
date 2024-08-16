@@ -10,23 +10,31 @@
     </div>
 </template>
 <script setup lang="ts">
+    // @ts-ignore
     import { useStore } from 'vuex';
     import { computed } from 'vue';
     import { useRouter, useRoute } from 'vue-router';
+    // @ts-ignore
     import Title from '../components/Title.vue';
+    // @ts-ignore
     import EpisodeCard from '../components/EpisodeCard.vue';
+    // @ts-ignore
     import List from '../components/List.vue';
 
 
     import { Episode } from "../interfaces/Data";
 
     const store = useStore();
+    // @ts-ignore
     const show = computed(() => store.getters['showStore/SHOW']);
+    // @ts-ignore
     const episode = computed(() => store.getters['episodeStore/EPISODE']);
+    // @ts-ignore
     const episodeList = computed(() => store.getters['showStore/EPISODES'].map((item: Episode) => ({id: item.id, text: `Episode ${item.id}`})));
     const router = useRouter();
     const route = useRoute();
 
+    // @ts-ignore
     function changeEpisode(event): void {
         router.push({
             path: route.path,

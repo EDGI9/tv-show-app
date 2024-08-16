@@ -1,11 +1,13 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import { mount } from '@vue/test-utils';
+import { mount, VueWrapper, DOMWrapper} from '@vue/test-utils';
+import { ComponentPublicInstance } from 'vue';
+
 import ButtonComponent from '../Button.vue';
 
 describe('Button', () => {
 
-    let wrapper; 
-    let component;
+    let wrapper: VueWrapper<ComponentPublicInstance>;
+    let component: DOMWrapper<HTMLButtonElement>;
     const props = {
         text: 'Click Me',
         onClick: vi.fn()
