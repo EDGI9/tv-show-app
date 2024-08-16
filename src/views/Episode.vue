@@ -4,7 +4,9 @@
             <Title :text="show.name" type="h1"/>
             <List :items="episodeList" :callback="changeEpisode"/>
         </div>
-        <EpisodeCard :data="episode"/>
+        <transition name="fade" mode="out-in">
+            <EpisodeCard :key="episode.id"  :data="episode"/>
+        </transition>
     </div>
 </template>
 <script setup lang="ts">

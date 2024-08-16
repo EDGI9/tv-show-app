@@ -7,7 +7,11 @@
       </div>
     </header>
     <main class="flex-grow bg-background ">
-      <router-view />
+      <router-view v-slot="{ Component, route }">
+        <transition :name="route.meta.transition || 'fade'" mode="out-in">
+          <component :is="Component" />
+        </transition>
+      </router-view>
     </main>
     <footer class="flex gap-12 px-12 items-center styicky items-center justify-center text-primary">
       <Title text="Footer" type="h2" class="text-primary"/>
@@ -18,5 +22,5 @@
     import ImageFrame from '../components/ImageFrame.vue';
 </script>
 <style lang="css">
- 
+
 </style>
