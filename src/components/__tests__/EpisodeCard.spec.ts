@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, vi } from 'vitest';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { mount, VueWrapper, DOMWrapper} from '@vue/test-utils';
 import { ComponentPublicInstance } from 'vue';
 import EpisodeCard from '../EpisodeCard.vue';

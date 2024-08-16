@@ -9,6 +9,7 @@ const router = createRouter({
   routes,
 });
 
+//@ts-ignore
 router.beforeEach(async (to, from, next) => {
   const store = useStore();
   try {
