@@ -20,7 +20,7 @@
 
     const store = useStore();
     const show = computed(() => store.getters['showStore/SHOW']);
-    const episode = computed(() => store.state.episodeStore.episode);
+    const episode = computed(() => store.getters['episodeStore/EPISODE']);
     const episodeList = computed(() => store.getters['showStore/EPISODES'].map((item: Episode) => ({id: item.id, text: `Episode ${item.id}`})));
     const router = useRouter();
     const route = useRoute();

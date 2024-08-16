@@ -17,10 +17,18 @@ const actions = {
     },
 }
 
+const getters = {
+    EPISODE (state) {
+        return state.episode
+    }
+}
+
+
 
 const episodeStore = {
   namespaced: true,
   state,
+  getters,
   mutations,
   actions
 };
