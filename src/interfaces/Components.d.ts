@@ -5,6 +5,10 @@ type NavItem = {
     text: string
     href: string
 };
+type ListItem = {
+    id: string
+    text: string
+};
 
 export type TitleComponent = {
     text: string
@@ -34,4 +38,10 @@ export type ButtonComponent = {
 export type EpisodeCard = {
     data: Episode
 };
+
+export type ListComponent = {
+    items: ListItem[]
+    callback: (event: Event) => void
+}
+
 
