@@ -40,6 +40,7 @@
     const episode = computed(() => store.getters['episodeStore/EPISODE']);
     // @ts-ignore
     const episodeList = computed(() => store.getters['showStore/EPISODES'].map((item: Episode) => ({id: item.number, text: `Episode ${item.number}`})));
+    //@ts-ignore
     const selectedEpisode = computed(() => route.query.number);
 
     // @ts-ignore

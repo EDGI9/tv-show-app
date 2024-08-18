@@ -20,12 +20,15 @@
 </template>
 <script setup lang="ts">
     import { useRouter } from 'vue-router'
-
+    //@ts-ignore
     import Title from '../components/Title.vue';
+    //@ts-ignor
     import ImageFrame from '../components/ImageFrame.vue';
+    //@ts-ignore
     import Logo from "../assets/logo.svg";
 
     const router = useRouter();
+     //@ts-ignore
     function goToHome(): void {
       router.push({ name: 'HomeChild',});
     }

@@ -6,13 +6,14 @@ export function transformEpisodeData(data: any): Episode | []{
     }
 
 
-    const {id, name, summary, image, season, airdate, runtime, rating } = data;
+    const {id, name, summary, image, season, airdate, runtime, rating, number } = data;
     const processedData = {
         id: id || '',
         name: name || '',
         summary: summary || '',
         image: image.original || '',
         season: season || '',
+        number: number,
         airdate: airdate || '',
         runtime: runtime || 0,
         rating: rating.average || 0,
