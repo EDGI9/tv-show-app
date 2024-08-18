@@ -22,7 +22,7 @@
     import { useRouter } from 'vue-router'
     //@ts-ignore
     import Title from '../components/Title.vue';
-    //@ts-ignor
+    //@ts-ignore
     import ImageFrame from '../components/ImageFrame.vue';
     //@ts-ignore
     import Logo from "../assets/logo.svg";
