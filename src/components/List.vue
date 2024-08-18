@@ -1,5 +1,5 @@
 <template>
-    <select @change="callback" data-testid="qa-list" class="px-3 py-2 rounded-lg bg-primary text-white">
+    <select @change="callback" :value="selectedItem" data-testid="qa-list" class="px-3 py-2 rounded-lg bg-primary text-white">
         <option v-for="item in items" :value="item.id" :key="item.id">{{item.text}}</option>
     </select>
 </template>
@@ -10,7 +10,8 @@ import { ListComponent } from "../interfaces/Components";
 
 const props = defineProps<ListComponent>();
 
-const { items , callback} = toRefs(props);
+const { items , callback, selectedItem } = toRefs(props);
+
 
 </script>
 

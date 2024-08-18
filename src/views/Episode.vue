@@ -1,11 +1,11 @@
 <template lang="">
-    <div class="grid flex-col items-center justify-start p-24 h-full">
+    <div class="grid flex-col items-center justify-start h-full">
         <Card> 
             <transition name="fade" mode="out-in">
                 <div :key="episode.id">
-                    <div class="flex flex-row justify-between items-center mb-10">
-                        <Title :text="show.name" type="h1"/>
-                        <List :items="episodeList" :callback="changeEpisode"/>
+                    <div class="flex flex-row justify-between items-center mb-4">
+                        <Title :text="show.name" type="h1" class="prose prose-headings:text-white"/>
+                        <List :items="episodeList" :callback="changeEpisode" :selectedItem="selectedEpisode"/>
                     </div>
                     <EpisodeCard :data="episode"/>
                 </div>
@@ -32,14 +32,15 @@
     import { Episode } from "../interfaces/Data";
 
     const store = useStore();
+    const router = useRouter();
+    const route = useRoute();
     // @ts-ignore
     const show = computed(() => store.getters['showStore/SHOW']);
     // @ts-ignore
     const episode = computed(() => store.getters['episodeStore/EPISODE']);
     // @ts-ignore
     const episodeList = computed(() => store.getters['showStore/EPISODES'].map((item: Episode) => ({id: item.id, text: `Episode ${item.id}`})));
-    const router = useRouter();
-    const route = useRoute();
+    const selectedEpisode = computed(() => route.query.number);
 
     // @ts-ignore
     function changeEpisode(event): void {
