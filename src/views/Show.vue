@@ -3,7 +3,7 @@
         <template v-if="show.id">
             <Title :text="show.name" type="h2" />
             <Description :text="show.summary"/>
-           <router-link to="/tv-show-app/shows/1/episodebynumber?season=1&number=1">To especific test show</router-link>
+           <router-link to="/shows/1/episodebynumber?season=1&number=1">To especific test show</router-link>
 
         </template>
     </div>
