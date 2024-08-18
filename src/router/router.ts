@@ -16,7 +16,7 @@ router.beforeEach(async (to, from, next) => {
   const store = useStore();
   try {
     if (!to.name) {
-      next("/error"); 
+      throw new Error("Invalid route");
     }
 
     if (to.name === 'Show' && to.params.id) {
