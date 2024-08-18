@@ -6,7 +6,7 @@
       </div>
     </header>
     <main class="flex-grow items-center justify-center flex flex-col">
-      <div class="flex flex-col items-center w-5/6">
+      <div class="flex flex-col items-center w-5/6 py-6">
         <router-view v-slot="{ Component, route }">
           <transition :name="route.meta.transition || 'fade'" mode="out-in">
             <component :is="Component" />
