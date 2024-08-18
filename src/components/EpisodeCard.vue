@@ -7,7 +7,7 @@
                     <ImageFrame :src="data.image" :alt="data.name" data-testid="qa-episode-card_image" class="h-full" />
                 </div>
                 <div class="w-[400px] h-[500px] bg-primary rounded-lg absolute shadow-lg z-0 rotate-3 opacity-50">
-                    asas
+                    -
                 </div>
             </div>
             <div class="flex flex-row items-center justify-center" >

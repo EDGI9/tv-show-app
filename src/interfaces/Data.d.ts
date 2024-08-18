@@ -6,6 +6,7 @@ export type ShowDTO = {
     name: string
     summary: string
     image: {original: string}
+    rating: {average: number}
 }
 
 export type EpisodeDTO = {

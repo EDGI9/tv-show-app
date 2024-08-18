@@ -1,4 +1,4 @@
-import { Episode } from "./Data";
+import { Episode, Show} from "./Data";
 
 type Title = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 type NavItem = {
@@ -43,5 +43,9 @@ export type ListComponent = {
     items: ListItem[]
     callback: (event: Event) => void
 }
+
+export type ShowCard = {
+    data: Show
+};
 
 

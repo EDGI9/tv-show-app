@@ -1,12 +1,16 @@
 <template lang="">
     <div class="grid flex-col items-center justify-start p-24 h-full">
-        <div class="flex flex-row justify-between items-center mb-10">
-            <Title :text="show.name" type="h1"/>
-            <List :items="episodeList" :callback="changeEpisode"/>
-        </div>
-        <transition name="fade" mode="out-in">
-            <EpisodeCard :key="episode.id"  :data="episode"/>
-        </transition>
+        <Card> 
+            <transition name="fade" mode="out-in">
+                <div :key="episode.id">
+                    <div class="flex flex-row justify-between items-center mb-10">
+                        <Title :text="show.name" type="h1"/>
+                        <List :items="episodeList" :callback="changeEpisode"/>
+                    </div>
+                    <EpisodeCard :data="episode"/>
+                </div>
+            </transition>
+        </Card>
     </div>
 </template>
 <script setup lang="ts">
@@ -20,6 +24,9 @@
     import EpisodeCard from '../components/EpisodeCard.vue';
     // @ts-ignore
     import List from '../components/List.vue';
+    // @ts-ignore
+    import Card from '../components/Card.vue';
+
 
 
     import { Episode } from "../interfaces/Data";

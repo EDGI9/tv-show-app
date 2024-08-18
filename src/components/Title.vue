@@ -1,5 +1,5 @@
 <template>
-    <div class="prose prose-headings:font-bold prose-headings:text-primary">
+    <div class="prose prose-headings:font-bold prose-headings:text-back">
         <component :is='type' data-testid="qa-title" class="my-5">{{ text }}</component>
     </div>
 </template>
