@@ -6,6 +6,7 @@ const episode: Episode = {
     summary: "Episode summary",
     image: "imageString",
     season: "1",
+    number: "1",
     airdate: "20-07-2016",
     runtime: 59,
     rating: 6.9

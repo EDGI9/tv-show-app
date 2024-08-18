@@ -12,6 +12,7 @@ describe('List', () => {
     const props = {
        items: List,
        callback: vi.fn(),
+       selectedItem: List[0].id,
     }
 
     beforeEach(() => {
@@ -37,6 +38,10 @@ describe('List', () => {
     it('Callback functino is triggered', async () => {
         await component.trigger('change');
         expect(props.callback).toHaveBeenCalled();
+    });
+
+    it('Check slected item on load', () => {
+        expect(component.element.value).toBe(props.selectedItem);
     });
 
 

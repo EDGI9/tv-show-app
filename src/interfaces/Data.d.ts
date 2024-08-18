@@ -26,6 +26,7 @@ export type Show = {
     name: string
     summary: string
     image: string
+    rating: number
     episodes: object[Episode]
 }
 
