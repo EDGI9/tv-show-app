@@ -5,12 +5,13 @@ export function transformShowData(data: ShowDTO): Show | {}{
         return {}
     }
     
-    const {id, name, summary, image} = data;
+    const {id, name, summary, image, rating} = data;
     const processedData = {
         id: id || '',
         name: name || '',
         summary: summary || '',
-        image: image.original || ''
+        image: image.original || '',
+        rating: rating.average || 0,
     }
     
     return processedData;
