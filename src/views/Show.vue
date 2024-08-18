@@ -21,26 +21,39 @@
     </div>
 </template>
 <script setup lang="ts">
+    //@ts-ignore
     import { RouterLink, useRouter } from 'vue-router'
+    //@ts-ignore
     import { useStore } from 'vuex';
+    //@ts-ignore
     import { computed } from 'vue';
+    //@ts-ignore
     import 'vue3-carousel/dist/carousel.css';
+    //@ts-ignore
     import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
-
+    //@ts-ignore
     import Description from '../components/Description.vue';
+    //@ts-ignore
     import Title from '../components/Title.vue';
+    //@ts-ignore
     import Card from '../components/Card.vue';
+    //@ts-ignore
     import ShowCard from '../components/ShowCard.vue';
+    //@ts-ignore
     import Button from '../components/Button.vue';
+    //@ts-ignore
     import ImageFrame from '../components/ImageFrame.vue';
-
+    //@ts-ignore
     import { Episode } from "../interfaces/Data.ts";
 
     const store = useStore();
     const router = useRouter();
+    //@ts-ignore
     const show = computed(() => store.getters['showStore/SHOW']);
+    //@ts-ignore
     const episodeList = computed(() => store.getters['showStore/EPISODES']);
-
+    
+    //@ts-ignore
     function goToEpisode(episode: Episode): void {
         router.push({
             name: 'Episode',
