@@ -46,7 +46,7 @@
             name: 'Episode',
             query: {
                 season: episode.season,
-                number: episode.id
+                number: episode.number
             }
 
         });

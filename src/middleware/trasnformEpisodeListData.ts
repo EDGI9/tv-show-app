@@ -9,8 +9,9 @@ export function transformEpisodeListData(data: any): Episode | []{
         id: item.id || '',
         name: item.name || '',
         summary: item.summary || '',
-        image: item.image.original || '',
-        season: item.season || ''
+        image: item.image?.original || '',
+        season: item.season || '',
+        number: item.number || ''
     }));
     
     return processedData;
