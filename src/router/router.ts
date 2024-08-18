@@ -4,8 +4,10 @@ import { useStore } from 'vuex';
 
 import routes from "./routes";
 
+const baseUrl = import.meta.env.VITE_BASE_URL;
+
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(`${baseUrl}/`),
   routes,
 });
 
