@@ -1,22 +1,22 @@
-import { Episode } from '../interfaces/Data';
+import { Episode, EpisodeDTO } from '../interfaces/Data';
 
-export function transformEpisodeData(data: any): Episode | [] {
+export function transformEpisodeData(data: EpisodeDTO): Episode | {} {
   if (!data) {
-    return [];
+    return {};
   }
 
   const { id, name, summary, image, season, airdate, runtime, rating, number } =
     data;
-  const processedData = {
+  const processedData: Episode = {
     id: id || '',
     name: name || '',
     summary: summary || '',
-    image: image.original || '',
+    image: image?.original || '',
     season: season || '',
-    number: number,
+    number: number || '',
     airdate: airdate || '',
     runtime: runtime || 0,
-    rating: rating.average || 0,
+    rating: rating?.average || 0,
   };
 
   return processedData;

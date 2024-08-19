@@ -14,5 +14,3 @@ const props = defineProps<TitleComponent>();
 
 const { text, type } = toRefs(props);
 </script>
-
-<style lang="css"></style>

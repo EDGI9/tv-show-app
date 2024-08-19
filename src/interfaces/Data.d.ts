@@ -1,5 +1,3 @@
-import { TextComponent, ImageComponent } from './Components';
-
 export type ShowDTO = {
   id: string;
   name: string;
@@ -9,7 +7,6 @@ export type ShowDTO = {
 };
 
 export type ShowListDTO = {
-  score: number;
   show: ShowDTO;
 };
 
@@ -31,8 +28,16 @@ export type Show = {
   summary: string;
   image: string;
   rating: number;
-  episodes: object[Episode];
 };
+
+export type ShowDetails = {
+    id: string;
+    name: string;
+    summary: string;
+    image: string;
+    rating: number;
+    episodes: object[Episode];
+  };
 
 export type Episode = {
   id: string;

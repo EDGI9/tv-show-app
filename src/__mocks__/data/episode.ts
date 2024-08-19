@@ -1,4 +1,4 @@
-import { Episode } from '../interfaces/Data';
+import { Episode } from '../../interfaces/Data';
 
 const episode: Episode = {
   id: 'idstring',

@@ -1,4 +1,4 @@
-<template lang="">
+<template>
   <div
     v-if="data.id"
     data-testid="qa-episode-card"
@@ -73,19 +73,13 @@
 </template>
 <script setup lang="ts">
 import { toRefs } from 'vue';
-// @ts-ignore
 import Description from '../components/Description.vue';
-// @ts-ignore
 import Title from '../components/Title.vue';
-// @ts-ignore
 import ImageFrame from '../components/ImageFrame.vue';
-// @ts-ignore
+
 import { EpisodeCard } from '../interfaces/Components';
-// @ts-ignore
-import { Episode } from '../interfaces/Data';
 
 const props = defineProps<EpisodeCard>();
-// @ts-ignore
-const { data: Episode } = toRefs(props);
+
+const { data } = toRefs(props);
 </script>
-<style lang="css"></style>

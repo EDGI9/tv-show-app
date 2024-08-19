@@ -9,5 +9,3 @@ const props = defineProps<ButtonComponent>();
 
 const { text } = props;
 </script>
-
-<style lang=""></style>

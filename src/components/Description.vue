@@ -10,5 +10,3 @@ const props = defineProps<DescriptionComponent>();
 
 const { text } = toRefs(props);
 </script>
-
-<style lang=""></style>

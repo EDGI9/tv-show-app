@@ -1,6 +1,6 @@
 import { ShowListDTO, Show } from '../interfaces/Data';
 
-export function transformShowListData(data: any): Show[] | [] {
+export function transformShowListData(data: ShowListDTO[]): Show[] | [] {
   if (!data) {
     return [];
   }

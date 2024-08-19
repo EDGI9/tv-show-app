@@ -1,4 +1,4 @@
-<template lang="">
+<template>
   <Card class="flex flex-col items-center w-full relative">
     <router-link to="/shows/1955" class="absolute top-0 right-0 p-6"
       >Shortcut to Powerpuff Girls</router-link
@@ -42,22 +42,21 @@
 import { computed } from 'vue';
 //@ts-ignore
 import { useStore } from 'vuex';
-//@ts-ignore
 import { RouterLink } from 'vue-router';
-//@ts-ignore
 import ImageFrame from '../components/ImageFrame.vue';
-//@ts-ignore
 import Title from '../components/Title.vue';
-// @ts-ignore
+//@ts-ignore
 import Card from '../components/Card.vue';
 import { Show } from '../interfaces/Data';
 
 const store = useStore();
+
 //@ts-ignore
 let showList: Show[] = computed(() => store.getters['showStore/SHOWS']);
 let timeout: any = null;
+
 //@ts-ignore
-function searchShow(params) {
+function searchShow(params): void {
   clearTimeout(timeout);
 
   timeout = setTimeout(() => {
@@ -65,4 +64,3 @@ function searchShow(params) {
   }, 500);
 }
 </script>
-<style lang=""></style>

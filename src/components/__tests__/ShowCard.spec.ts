@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach } from 'vitest';
 import { mount, VueWrapper, DOMWrapper } from '@vue/test-utils';
 import { ComponentPublicInstance } from 'vue';
 import ShowCard from '../ShowCard.vue';
-import Show from '../../__mocks__/show';
+import Show from '../../__mocks__/data/show';
 
 describe('ShowCard', () => {
   let wrapper: VueWrapper<ComponentPublicInstance>;
