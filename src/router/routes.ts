@@ -1,10 +1,7 @@
-// @ts-ignore
 import BaseLayout from '../layouts/BaseLayout.vue';
 // @ts-ignore
 import Home from '../views/Home.vue';
-// @ts-ignore
 import Show from '../views/Show.vue';
-// @ts-ignore
 import Episode from '../views/Episode.vue';
 // @ts-ignore
 import MissingPage from '../views/MissingPage.vue';

@@ -1,5 +1,3 @@
-import { TextComponent, ImageComponent } from './Components';
-
 export type ShowDTO = {
   id: string;
   name: string;

@@ -64,4 +64,3 @@ function searchShow(params): void {
   }, 500);
 }
 </script>
-<style lang=""></style>

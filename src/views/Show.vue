@@ -50,6 +50,8 @@ const show = computed(() => store.getters['showStore/SHOW']);
 const episodeList = computed(() => store.getters['showStore/EPISODES']);
 
 function goToEpisode(episode: Episode): void {
+  console.log('episode', episode);
+  
   router.push({
     name: 'Episode',
     query: {
@@ -59,4 +61,3 @@ function goToEpisode(episode: Episode): void {
   });
 }
 </script>
-<style lang=""></style>

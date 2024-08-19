@@ -8,4 +8,3 @@
 import Description from '../components/Description.vue';
 import Title from '../components/Title.vue';
 </script>
-<style lang=""></style>

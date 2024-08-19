@@ -10,8 +10,8 @@ export function transformShowData(data: ShowDTO): Show | {} {
     id: id || '',
     name: name || '',
     summary: summary || '',
-    image: image.original || '',
-    rating: rating.average || 0,
+    image: image?.original || '',
+    rating: rating?.average || 0,
   };
 
   return processedData;

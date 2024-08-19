@@ -22,12 +22,14 @@
   </div>
 </template>
 <script setup lang="ts">
+//@ts-ignore
 import { useStore } from 'vuex';
 import { computed } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 import Title from '../components/Title.vue';
 import EpisodeCard from '../components/EpisodeCard.vue';
 import List from '../components/List.vue';
+//@ts-ignore
 import Card from '../components/Card.vue';
 
 import { Episode } from '../interfaces/Data';
@@ -59,4 +61,3 @@ function changeEpisode(event): void {
   });
 }
 </script>
-<style lang="css"></style>

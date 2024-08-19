@@ -11,7 +11,7 @@ export const fetchShow = async (id: string): Promise<ShowDetails | {}> => {
   }
 
   const show = transformShowData(data);
-  const episodes = fetchEpisodes(id);
+  const episodes = await fetchEpisodes(id);
 
   const showData = { ...show, episodes: episodes };
   return showData;

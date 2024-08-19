@@ -54,4 +54,3 @@ const props = defineProps<ShowCard>();
 
 const { data } = toRefs(props);
 </script>
-<style lang="css"></style>

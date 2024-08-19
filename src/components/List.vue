@@ -19,5 +19,3 @@ const props = defineProps<ListComponent>();
 
 const { items, callback, selectedItem } = toRefs(props);
 </script>
-
-<style lang=""></style>

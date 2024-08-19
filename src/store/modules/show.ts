@@ -1,45 +1,49 @@
+//@ts-ignore
+import { Store } from 'vuex';
 import { fetchShow, fetchShows } from '../../services/showApi.ts';
+import { showState } from "../../interfaces/Store";
+import { Episode, Show, ShowDetails } from '../../interfaces/Data';
 
-const state = {
-  show: {},
-  shows: {},
+const state : showState = {
+  show: {
+    id: '',
+    name: '',
+    summary: '',
+    image: '',
+    rating: 0,
+    episodes: []
+  },
+  shows: [],
 };
 
 const mutations = {
-  //@ts-ignore
-  SET_SHOW(state, payload) {
+  SET_SHOW(state: showState, payload: ShowDetails) {
     state.show = payload;
   },
-  //@ts-ignore
-  SET_SHOWS(state, payload) {
+  SET_SHOWS(state: showState, payload: Show[]) {
     state.shows = payload;
   },
 };
 
 const actions = {
-  //@ts-ignore
-  async GET_SHOW({ commit }, id: string) {
+  async GET_SHOW({ commit }: { commit: Store<showState>['commit'] }, id: string) {
     const data = await fetchShow(id);
     commit('SET_SHOW', data);
   },
-  //@ts-ignore
-  async GET_SHOWS({ commit }, query: string) {
+  async GET_SHOWS({ commit }: { commit: Store<showState>['commit'] }, query: string) {
     const data = await fetchShows(query);
     commit('SET_SHOWS', data);
   },
 };
 
 const getters = {
-  //@ts-ignore
-  SHOW(state) {
+  SHOW(state: showState): Show {
     return state.show;
   },
-  //@ts-ignore
-  SHOWS(state) {
+  SHOWS(state: showState): Show[] {
     return state.shows;
   },
-  //@ts-ignore
-  EPISODES(state) {
+  EPISODES(state: showState) : Episode[] {
     return state.show.episodes;
   },
 };

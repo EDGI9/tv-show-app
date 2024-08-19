@@ -1,19 +1,32 @@
+//@ts-ignore
+import { Store } from 'vuex';
 import { fetchEpisode } from '../../services/episodeApi.ts';
+import { episodeState } from "../../interfaces/Store";
+import { Episode } from '../../interfaces/Data';
 
-const state = {
-  episode: {},
+
+const state: episodeState = {
+  episode: {
+    id: '',
+    name: '',
+    summary: '',
+    image: '',
+    number: '',
+    season: '',
+    airdate: '',
+    runtime: 0,
+    rating: 0
+  },
 };
 
 const mutations = {
-  //@ts-ignore
-  SET_EPISODE(state, payload) {
-    state.episode = payload;
+  SET_EPISODE(state: episodeState, payload: Episode) {
+    state.episode = {...payload};
   },
 };
 
 const actions = {
-  //@ts-ignore
-  async GET_EPISODE({ commit }, payload) {
+  async GET_EPISODE({ commit }: { commit: Store<episodeState>['commit'] }, payload:{id:string, seasonId:string, episodeId:string}) {
     const data = await fetchEpisode(
       payload.id,
       payload.seasonId,
@@ -24,8 +37,7 @@ const actions = {
 };
 
 const getters = {
-  //@ts-ignore
-  EPISODE(state) {
+  EPISODE(state: episodeState): Episode {
     return state.episode;
   },
 };

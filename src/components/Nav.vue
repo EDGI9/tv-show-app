@@ -16,5 +16,3 @@ const props = defineProps<NavComponent>();
 
 const { items } = toRefs(props);
 </script>
-
-<style lang=""></style>

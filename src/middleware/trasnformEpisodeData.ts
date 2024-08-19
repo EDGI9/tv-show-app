@@ -11,12 +11,12 @@ export function transformEpisodeData(data: EpisodeDTO): Episode | {} {
     id: id || '',
     name: name || '',
     summary: summary || '',
-    image: image.original || '',
+    image: image?.original || '',
     season: season || '',
     number: number,
     airdate: airdate || '',
     runtime: runtime || 0,
-    rating: rating.average || 0,
+    rating: rating?.average || 0,
   };
 
   return processedData;

@@ -83,4 +83,3 @@ const props = defineProps<EpisodeCard>();
 
 const { data } = toRefs(props);
 </script>
-<style lang="css"></style>
