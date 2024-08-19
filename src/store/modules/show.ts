@@ -11,6 +11,7 @@ const mutations = {
     SET_SHOW(state, payload) {
         state.show = payload;
     },
+    //@ts-ignore
     SET_SHOWS(state, payload) {
         state.shows = payload;
     },

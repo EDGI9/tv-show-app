@@ -1,3 +1,8 @@
 {
-  "recommendations": ["Vue.volar"]
+  "recommendations": ["Vue.volar"],
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": ["javascript", "javascriptreact", "vue", "typescript", "typescriptreact"]
 }

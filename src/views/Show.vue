@@ -22,7 +22,7 @@
 </template>
 <script setup lang="ts">
     //@ts-ignore
-    import { RouterLink, useRouter } from 'vue-router'
+    import { useRouter } from 'vue-router'
     //@ts-ignore
     import { useStore } from 'vuex';
     //@ts-ignore
