@@ -3,7 +3,7 @@ import { mount, VueWrapper, DOMWrapper } from '@vue/test-utils';
 import { ComponentPublicInstance } from 'vue';
 import NavComponent from '../Nav.vue';
 
-import Nav from '../../__mocks__/nav';
+import Nav from '../../__mocks__/components/nav';
 
 describe('Description', () => {
   let wrapper: VueWrapper<ComponentPublicInstance>;

@@ -1,7 +1,7 @@
-import { Show } from '../interfaces/Data';
+import { ShowDetails } from '../../interfaces/Data';
 import Episode from './episode';
 
-const show: Show = {
+const show: ShowDetails = {
   id: 'idstring',
   name: 'My Show',
   summary: 'Show summary',

@@ -13,7 +13,7 @@ export function transformEpisodeData(data: EpisodeDTO): Episode | {} {
     summary: summary || '',
     image: image?.original || '',
     season: season || '',
-    number: number,
+    number: number || '',
     airdate: airdate || '',
     runtime: runtime || 0,
     rating: rating?.average || 0,

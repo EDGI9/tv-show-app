@@ -3,7 +3,7 @@ import { mount, VueWrapper, DOMWrapper } from '@vue/test-utils';
 import { ComponentPublicInstance } from 'vue';
 import ListComponent from '../List.vue';
 
-import List from '../../__mocks__/list';
+import List from '../../__mocks__/components/list';
 
 describe('List', () => {
   let wrapper: VueWrapper<ComponentPublicInstance>;

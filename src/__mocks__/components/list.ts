@@ -1,4 +1,4 @@
-import { ListItem } from '../interfaces/Components';
+import { ListItem } from '../../interfaces/Components';
 
 const items: ListItem[] = [
   { id: '1', text: 'Item 1' },
