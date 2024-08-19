@@ -1,13 +1,18 @@
-import { fetchShow } from '../../services/showApi.ts';
+import { fetchShow, fetchShows } from '../../services/showApi.ts';
 
 const state = {
-    show: {}
+    show: {},
+    shows: {},
+    
 };
 
 const mutations = {
     //@ts-ignore
     SET_SHOW(state, payload) {
         state.show = payload;
+    },
+    SET_SHOWS(state, payload) {
+        state.shows = payload;
     },
 }
 
@@ -17,12 +22,21 @@ const actions = {
         const data = await fetchShow(id)
         commit('SET_SHOW', data);
     },
+    //@ts-ignore
+    async GET_SHOWS({ commit }, query: string) {
+        const data = await fetchShows(query)
+        commit('SET_SHOWS', data);
+    },
 }
 
 const getters = {
     //@ts-ignore
     SHOW (state) {
         return state.show
+    },
+    //@ts-ignore
+    SHOWS (state) {
+        return state.shows
     },
     //@ts-ignore
     EPISODES (state) {

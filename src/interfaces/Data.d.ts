@@ -9,6 +9,11 @@ export type ShowDTO = {
     rating: {average: number}
 }
 
+export type ShowListDTO = {
+    score: number
+    show: ShowDTO
+}
+
 export type EpisodeDTO = {
     id: string
     name: string
