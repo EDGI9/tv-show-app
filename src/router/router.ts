@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 // @ts-ignore
 import { useStore } from 'vuex';
 
-import routes from "./routes";
+import routes from './routes';
 
 const baseUrl = import.meta.env.VITE_BASE_URL;
 
@@ -16,27 +16,32 @@ router.beforeEach(async (to, from, next) => {
   const store = useStore();
   try {
     if (!to.name) {
-      throw new Error("Invalid route");
+      throw new Error('Invalid route');
     }
 
     if (to.name === 'Show' && to.params.id) {
       await store.dispatch('showStore/GET_SHOW', to.params.id);
-    } 
+    }
 
-    if (to.name === 'Episode' && to.params.id && to.query.season && to.query.number) {
+    if (
+      to.name === 'Episode' &&
+      to.params.id &&
+      to.query.season &&
+      to.query.number
+    ) {
       const params = {
         id: to.params.id,
         seasonId: to.query.season,
-        episodeId: to.query.number
+        episodeId: to.query.number,
       };
       await store.dispatch('showStore/GET_SHOW', to.params.id);
       await store.dispatch('episodeStore/GET_EPISODE', params);
     }
-    
+
     next();
   } catch (error) {
     console.error('Error during navigation:', error);
-    next("/error"); 
+    next('/error');
   }
 });
 

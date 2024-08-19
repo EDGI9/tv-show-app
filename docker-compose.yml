@@ -9,6 +9,6 @@ services:
       - 127.0.0.1:5173:5173
     volumes:
       - ./:/app
-      - /app/node_modules 
-    environment: 
+      - /app/node_modules
+    environment:
       - CHOKIDAR_USEPOLLING=true

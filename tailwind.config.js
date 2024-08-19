@@ -12,12 +12,9 @@ export default {
         highlight: '#FF5733', // Orange-Red
       },
       backgroundImage: {
-        'bubbles': "url('/src/assets/bubbles.svg')",
-      }
+        bubbles: "url('/src/assets/bubbles.svg')",
+      },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
-}
-
+  plugins: [require('@tailwindcss/typography')],
+};
