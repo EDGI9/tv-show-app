@@ -12,7 +12,7 @@
             <List
               :items="episodeList"
               :callback="changeEpisode"
-              :selectedItem="selectedEpisode.value"
+              :selectedItem="selectedEpisode"
             />
           </div>
           <EpisodeCard :data="episode" />
