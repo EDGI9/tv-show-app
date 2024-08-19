@@ -9,7 +9,7 @@
   />
   <div v-else data-testid="qa-image-frame">
     <Card class="h-full w-full flex items-center justify-center">
-      <p>No Image vailable</p>
+      <p>No Image Available</p>
     </Card>
   </div>
 </template>
