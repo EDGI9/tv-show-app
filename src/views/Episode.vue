@@ -48,6 +48,7 @@ const episodeList = computed(() =>
   }))
 );
 
+//@ts-ignore
 const selectedEpisode = computed(() => route.query.number);
 
 //@ts-ignore

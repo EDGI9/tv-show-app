@@ -17,8 +17,8 @@
   </header>
   <main class="flex-grow items-center justify-center flex flex-col">
     <div class="flex flex-col items-center w-5/6 py-6">
-      <router-view v-slot="{ Component, route }">
-        <transition :name="route.meta.transition || 'fade'" mode="out-in">
+      <router-view v-slot="{ Component }">
+        <transition :name="transition || 'fade'" mode="out-in">
           <component :is="Component" />
         </transition>
       </router-view>
@@ -31,12 +31,16 @@
   </footer>
 </template>
 <script setup lang="ts">
-import { useRouter } from 'vue-router';
+import { useRouter, useRoute } from 'vue-router';
 import Title from '../components/Title.vue';
 import ImageFrame from '../components/ImageFrame.vue';
 import Logo from '../assets/logo.svg';
 
 const router = useRouter();
+const route = useRoute();
+
+//@ts-ignore
+const transition = computed(() => route.meta.transition);
 
 function goToHome(): void {
   router.push({ name: 'HomeChild' });
