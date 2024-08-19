@@ -1,18 +1,18 @@
-import { ShowDTO, Show } from "../interfaces/Data";
+import { ShowDTO, Show } from '../interfaces/Data';
 
-export function transformShowData(data: ShowDTO): Show | {}{
-    if (!data) {
-        return {}
-    }
-    
-    const {id, name, summary, image, rating} = data;
-    const processedData = {
-        id: id || '',
-        name: name || '',
-        summary: summary || '',
-        image: image.original || '',
-        rating: rating.average || 0,
-    }
-    
-    return processedData;
+export function transformShowData(data: ShowDTO): Show | {} {
+  if (!data) {
+    return {};
+  }
+
+  const { id, name, summary, image, rating } = data;
+  const processedData = {
+    id: id || '',
+    name: name || '',
+    summary: summary || '',
+    image: image.original || '',
+    rating: rating.average || 0,
+  };
+
+  return processedData;
 }

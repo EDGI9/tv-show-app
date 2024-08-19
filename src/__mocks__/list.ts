@@ -1,10 +1,10 @@
-import { ListItem } from "../interfaces/Components";
+import { ListItem } from '../interfaces/Components';
 
-const items : ListItem[] = [
-    {id: '1', text: 'Item 1'},
-    {id: '2', text: 'Item 2'},
-    {id: '3', text: 'Item 3'},
-    {id: '4', text: 'Item 4'}
-]
+const items: ListItem[] = [
+  { id: '1', text: 'Item 1' },
+  { id: '2', text: 'Item 2' },
+  { id: '3', text: 'Item 3' },
+  { id: '4', text: 'Item 4' },
+];
 
-export default items
+export default items;

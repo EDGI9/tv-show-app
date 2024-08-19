@@ -1,4 +1,3 @@
-
 const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
 async function request(url: string, options: RequestInit = {}): Promise<any> {
