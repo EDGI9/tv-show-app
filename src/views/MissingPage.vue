@@ -1,4 +1,4 @@
-<template lang="">
+<template>
   <div>
     <Title text="404" type="h2" />
     <Description text="Page Missing" />

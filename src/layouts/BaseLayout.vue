@@ -1,4 +1,4 @@
-<template lang="">
+<template>
   <header
     class="flex gap-6 px-12 items-center shadow-md bg-white/10 backdrop-blur-md"
   >
@@ -32,15 +32,12 @@
 </template>
 <script setup lang="ts">
 import { useRouter } from 'vue-router';
-//@ts-ignore
 import Title from '../components/Title.vue';
-//@ts-ignore
 import ImageFrame from '../components/ImageFrame.vue';
-//@ts-ignore
 import Logo from '../assets/logo.svg';
 
 const router = useRouter();
-//@ts-ignore
+
 function goToHome(): void {
   router.push({ name: 'HomeChild' });
 }
