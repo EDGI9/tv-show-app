@@ -31,6 +31,7 @@
   </footer>
 </template>
 <script setup lang="ts">
+import { computed } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 import Title from '../components/Title.vue';
 import ImageFrame from '../components/ImageFrame.vue';
