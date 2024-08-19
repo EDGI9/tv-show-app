@@ -1,9 +1,10 @@
 import { get } from "./index.ts";
 import { fetchEpisodes } from "./episodeApi.ts";
 import { transformShowData } from '../middleware/transformShowData.ts';
-import { ShowDTO } from "../interfaces/Data";
+import { transformShowListData } from '../middleware/trasnformShowListData.ts';
+import { Show } from "../interfaces/Data";
 
-export const fetchShow = async (id: string): Promise<ShowDTO | {}> => {
+export const fetchShow = async (id: string): Promise<Show | {}> => {
     const data = await get(`/shows/${id}`);
     if (!data) {
         return {}
@@ -14,4 +15,14 @@ export const fetchShow = async (id: string): Promise<ShowDTO | {}> => {
 
     const showData = {...show, episodes: episodes}
     return showData
+};
+
+export const fetchShows = async (query: string): Promise<Show[] | []> => {
+    const data = await get(`/search/shows?q=${query}`);
+    if (!data) {
+        return []
+    }
+    console.log(data);
+    
+    return await transformShowListData(data);
 };
