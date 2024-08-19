@@ -50,7 +50,7 @@ const episodeList = computed(() =>
 
 const selectedEpisode = computed(() => {
   const number = route.query.number;
-  return Array.isArray(number) ? number[0] : number || '';
+  return Array.isArray(number) ? number[0] : (number as string) || '';
 });
 
 //@ts-ignore
