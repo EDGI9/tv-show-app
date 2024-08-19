@@ -12,7 +12,7 @@
             <List
               :items="episodeList"
               :callback="changeEpisode"
-              :selectedItem="selectedEpisode"
+              :selectedItem="selectedEpisode.value"
             />
           </div>
           <EpisodeCard :data="episode" />
@@ -48,8 +48,10 @@ const episodeList = computed(() =>
   }))
 );
 
-//@ts-ignore
-const selectedEpisode = computed(() => route.query.number);
+const selectedEpisode = computed(() => {
+  const number = route.query.number;
+  return Array.isArray(number) ? number[0] : number || '';
+});
 
 //@ts-ignore
 function changeEpisode(event): void {
