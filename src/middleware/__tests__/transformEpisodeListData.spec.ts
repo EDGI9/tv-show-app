@@ -5,6 +5,8 @@ import { EpisodeDTO, Episode } from '../../interfaces/Data';
 import {
   invalidEpisodeDTO as mockInvalidEpisodeDTO,
   validEpisodeDTO as mockValidEpisodeDTO,
+  transformedValidEpisodeDTO as mockTransformedValidEpisodeDTO,
+  transformedInvalidEpisodeDTO as mockTransformedInvalidEpisodeDTO
 } from '../../__mocks__/middleware/episodeDto';
 
 const validEpisodeListDTO: EpisodeDTO[] = [mockValidEpisodeDTO];
@@ -15,17 +17,7 @@ describe('transformEpisodeListData', () => {
   it('should transform valid EpisodeDTO array into Episode array', () => {
     const result = transformEpisodeListData(validEpisodeListDTO);
     const expectedResult: Episode[] = [
-      {
-        id: '1',
-        name: 'My Episode',
-        summary: 'Episode summary',
-        image: 'http://image.url',
-        season: '1',
-        number: '1',
-        airdate: '2022-01-01',
-        runtime: 60,
-        rating: 29,
-      },
+      mockTransformedValidEpisodeDTO,
     ];
 
     expect(result).toEqual(expectedResult);
@@ -35,17 +27,7 @@ describe('transformEpisodeListData', () => {
     //@ts-ignore
     const result = transformEpisodeListData(invalidEpisodeLisDTO);
     const expectedResult: Episode[] = [
-      {
-        id: '1',
-        name: '',
-        summary: '',
-        image: '',
-        season: '',
-        number: '',
-        airdate: '',
-        runtime: 0,
-        rating: 0,
-      },
+      mockTransformedInvalidEpisodeDTO
     ];
 
     expect(result).toEqual(expectedResult);

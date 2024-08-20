@@ -4,6 +4,8 @@ import { Episode, EpisodeDTO } from '../../interfaces/Data';
 import {
   invalidEpisodeDTO as mockInvalidEpisodeDTO,
   validEpisodeDTO as mockValidEpisodeDTO,
+  transformedValidEpisodeDTO as mockTransformedValidEpisodeDTO,
+  transformedInvalidEpisodeDTO as mockTransformedInvalidEpisodeDTO
 } from '../../__mocks__/middleware/episodeDto';
 
 const validEpisodeDTO: EpisodeDTO = mockValidEpisodeDTO;
@@ -13,17 +15,7 @@ const invalidEpisodeDTO = mockInvalidEpisodeDTO;
 describe('transformEpisodeData', () => {
   it('Should transform valid EpisodeDTO into Episode object', () => {
     const result = transformEpisodeData(validEpisodeDTO);
-    const expectedResult: Episode = {
-      id: '1',
-      name: 'My Episode',
-      summary: 'Episode summary',
-      image: 'http://image.url',
-      season: '1',
-      number: '1',
-      airdate: '2022-01-01',
-      runtime: 60,
-      rating: 29,
-    };
+    const expectedResult: Episode = mockTransformedValidEpisodeDTO;
 
     expect(result).toEqual(expectedResult);
   });
@@ -31,17 +23,7 @@ describe('transformEpisodeData', () => {
   it('Should return default values when properties are missing', () => {
     //@ts-ignore
     const result = transformEpisodeData(invalidEpisodeDTO);
-    const expectedResult: Episode = {
-      id: '1',
-      name: '',
-      summary: '',
-      image: '',
-      season: '',
-      number: '',
-      airdate: '',
-      runtime: 0,
-      rating: 0,
-    };
+    const expectedResult: Episode = mockTransformedInvalidEpisodeDTO;
 
     expect(result).toEqual(expectedResult);
   });

@@ -4,6 +4,8 @@ import { Show, ShowDTO } from '../../interfaces/Data';
 import {
   invalidShowDTO as mockInvalidShowDTO,
   validShowDTO as mockValidShowDTO,
+  transformedValidShowDTO as mockTransformedValidShowDTO,
+  transformedInvalidShowDTO as mockTransformedInvalidShowDTO,
 } from '../../__mocks__/middleware/showDto';
 
 const validShowDTO: ShowDTO = mockValidShowDTO;
@@ -13,13 +15,7 @@ const invalidShowDTO = mockInvalidShowDTO;
 describe('transformShowData', () => {
   it('Should transform valid ShowDTO into Show object', () => {
     const result = transformShowData(validShowDTO);
-    const expectedResult: Show = {
-      id: '1',
-      name: 'My Show',
-      summary: 'Show summary',
-      image: 'http://image.url',
-      rating: 29,
-    };
+    const expectedResult: Show = mockTransformedValidShowDTO;
 
     expect(result).toEqual(expectedResult);
   });
@@ -28,13 +24,7 @@ describe('transformShowData', () => {
     //@ts-ignore
     const result = transformShowData(invalidShowDTO);
 
-    const expectedResult: Show = {
-      id: '1',
-      name: '',
-      summary: '',
-      image: '',
-      rating: 0,
-    };
+    const expectedResult: Show = mockTransformedInvalidShowDTO;
 
     expect(result).toEqual(expectedResult);
   });

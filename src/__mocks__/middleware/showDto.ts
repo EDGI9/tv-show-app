@@ -1,4 +1,4 @@
-import { ShowDTO } from '../../interfaces/Data';
+import { Show, ShowDTO } from '../../interfaces/Data';
 
 export const validShowDTO: ShowDTO = {
   id: '1',
@@ -18,4 +18,20 @@ export const invalidShowDTO = {
   summary: '',
   image: null,
   rating: null,
+};
+
+export const transformedValidShowDTO: Show = {
+  id: '1',
+  name: 'My Show',
+  summary: 'Show summary',
+  image: 'http://image.url',
+  rating: 29,
+};
+
+export const transformedInvalidShowDTO: Show = {
+  id: '1',
+  name: '',
+  summary: '',
+  image: '',
+  rating: 0,
 };
