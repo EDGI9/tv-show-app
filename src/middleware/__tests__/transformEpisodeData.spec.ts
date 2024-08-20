@@ -1,11 +1,11 @@
 import { describe, it, expect } from 'vitest';
-import { transformEpisodeData } from '../../middleware/trasnformEpisodeData';
+import { transformEpisodeData } from '../transformEpisodeData';
 import { Episode, EpisodeDTO } from '../../interfaces/Data';
 import  {invalidEpisodeDTO as mockInvalidEpisodeDTO, validEpisodeDTO as mockValidEpisodeDTO} from "../../__mocks__/middleware/episodeDto";
 
 const validEpisodeDTO: EpisodeDTO = mockValidEpisodeDTO;
 
-const invaliEpisodeDTO = mockInvalidEpisodeDTO;
+const invalidEpisodeDTO = mockInvalidEpisodeDTO;
 
 describe('transformEpisodeData', () => {
   it('Should transform valid EpisodeDTO into Episode object', () => {
@@ -27,7 +27,7 @@ describe('transformEpisodeData', () => {
 
   it('Should return default values when properties are missing', () => {
     //@ts-ignore
-    const result = transformEpisodeData(invaliEpisodeDTO);
+    const result = transformEpisodeData(invalidEpisodeDTO);
     const expectedResult: Episode = {
         id: '1',
         name: '',

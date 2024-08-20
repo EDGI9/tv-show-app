@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { transformEpisodeListData } from '../../middleware/trasnformEpisodeListData';
+import { transformEpisodeListData } from '../transformEpisodeListData';
 import { EpisodeDTO, Episode } from '../../interfaces/Data';
 
 import  {invalidEpisodeDTO as mockInvalidEpisodeDTO, validEpisodeDTO as mockValidEpisodeDTO} from "../../__mocks__/middleware/episodeDto";

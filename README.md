@@ -1,17 +1,17 @@
 # Tv Show App
 
-A simple Vue 3 application that connects to public API and retreives data realted to TV shows.
+A simple Vue 3 application that connects to public API and retrieves data related to TV shows.
 
 ![image](https://github.com/EDGI9/tv-show-app/blob/main/public/website_preview.webp?raw=true)
 
 
 ## Pages
 
-- Homepage - Search for Shows based on Show name (Shortcut to a particular Show avaiable)
+- Homepage - Search for Shows based on Show name (Shortcut to a particular Show available)
 
 - Show Page - Show details Page, with list of episodes
 
-- Episode Page - Episde details page, with possibilityto change episode
+- Episode Page - Episode details page, with possibility change episode
 
 ## Demo
 
@@ -28,7 +28,7 @@ A simple Vue 3 application that connects to public API and retreives data realte
 - Store ( Vuex 4)
 - CSS (CSS, Tailwind)
 - CI/CD (GitHub Actions)
-- Containeration (Docker, Docker Compose, Dev container)
+- Containerization (Docker, Docker Compose, Dev container)
 - Linting/Formatters (Prettier, ESlint)
 
 <table>

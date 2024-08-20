@@ -1,7 +1,7 @@
 const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
 /**
- * Request functinoa that uses native Javascript fetch api to perform asyncronous calls
+ * Request function that uses native Javascript fetch api to perform asynchronous calls
  * @param url string
  * @param options object
  */

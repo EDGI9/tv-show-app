@@ -1,7 +1,7 @@
 import { get } from './index.ts';
 import { fetchEpisodes } from './episodeApi.ts';
 import { transformShowData } from '../middleware/transformShowData.ts';
-import { transformShowListData } from '../middleware/trasnformShowListData.ts';
+import { transformShowListData } from '../middleware/transformShowListData.ts';
 import { Show, ShowDetails, ShowDTO, ShowListDTO } from '../interfaces/Data';
 
  /**

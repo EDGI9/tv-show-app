@@ -34,12 +34,12 @@ describe('List', () => {
     });
   });
 
-  it('Callback functino is triggered', async () => {
+  it('Callback function is triggered', async () => {
     await component.trigger('change');
     expect(props.callback).toHaveBeenCalled();
   });
 
-  it('Check slected item on load', () => {
+  it('Check selected item on load', () => {
     expect(component.element.value).toBe(props.selectedItem);
   });
 });
