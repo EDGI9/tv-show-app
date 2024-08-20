@@ -1,10 +1,10 @@
-import { Episode, Show, ShowDetails } from "../interfaces/Data";
+import { Episode, Show, ShowDetails } from '../interfaces/Data';
 
 export type showState = {
-    show: ShowDetails,
-    shows: Show[]
-}
+  show: ShowDetails;
+  shows: Show[];
+};
 
 export type episodeState = {
-    episode: Episode
-}
+  episode: Episode;
+};

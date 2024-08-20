@@ -1,5 +1,10 @@
 import { EpisodeDTO, Episode } from '../interfaces/Data';
 
+/**
+ * Transform a list of Episode data to an array of Episode data to be used by the vue application
+ * @param data EpisodeDTO[]
+ *
+ */
 export function transformEpisodeListData(data: EpisodeDTO[]): Episode[] | [] {
   if (!data) {
     return [];

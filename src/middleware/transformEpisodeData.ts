@@ -1,5 +1,10 @@
 import { Episode, EpisodeDTO } from '../interfaces/Data';
 
+/**
+ * Transform Episode data to an object to be used the vue application
+ * @param data EpisodeDTO{}
+ *
+ */
 export function transformEpisodeData(data: EpisodeDTO): Episode | {} {
   if (!data) {
     return {};

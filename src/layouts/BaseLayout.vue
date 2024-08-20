@@ -25,7 +25,7 @@
     </div>
   </main>
   <footer
-    class="flex gap-12 px-12 items-center styicky items-center justify-center text-primary backdrop-blur-md bg-white/10"
+    class="flex gap-12 px-12 items-center sticky items-center justify-center text-primary backdrop-blur-md bg-white/10"
   >
     <Title text="Footer" type="h2" class="prose prose-headings:text-white" />
   </footer>
@@ -43,8 +43,11 @@ const route = useRoute();
 //@ts-ignore
 const transition = computed(() => route.meta.transition);
 
+/**
+ * Redirect to Homepage
+ *
+ */
 function goToHome(): void {
   router.push({ name: 'HomeChild' });
 }
 </script>
-<style lang="css"></style>

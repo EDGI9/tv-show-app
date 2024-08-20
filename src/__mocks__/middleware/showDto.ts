@@ -5,17 +5,17 @@ export const validShowDTO: ShowDTO = {
   name: 'My Show',
   summary: 'Show summary',
   image: {
-    original: "http://image.url"
+    original: 'http://image.url',
   },
   rating: {
-    average: 29
+    average: 29,
   },
 };
 
 export const invalidShowDTO = {
-    id: '1',
-    name: '',
-    summary: '',
-    image: null,
-    rating: null,
-  };
+  id: '1',
+  name: '',
+  summary: '',
+  image: null,
+  rating: null,
+};

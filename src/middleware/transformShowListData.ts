@@ -1,5 +1,10 @@
 import { ShowListDTO, Show } from '../interfaces/Data';
 
+/**
+ * Transform a list of ShowList data to an array of Show data to be used by the vue application
+ * @param data ShowListDTO[]
+ *
+ */
 export function transformShowListData(data: ShowListDTO[]): Show[] | [] {
   if (!data) {
     return [];

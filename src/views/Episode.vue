@@ -41,10 +41,14 @@ const route = useRoute();
 const show = computed(() => store.getters['showStore/SHOW']);
 const episode = computed(() => store.getters['episodeStore/EPISODE']);
 
+/**
+ * Fetch the list of Episodes and adapting slightly its data for the specific use of this component
+ *
+ */
 const episodeList = computed(() =>
   store.getters['showStore/EPISODES'].map((item: Episode) => ({
     id: item.number,
-    text: `Episode ${item.number}`,
+    text: `Season ${item.season} - Episode ${item.number}`,
   }))
 );
 
@@ -53,10 +57,15 @@ const selectedEpisode = computed(() => {
   return Array.isArray(number) ? number[0] : (number as string) || '';
 });
 
+/**
+ * Change route to a different episode
+ * @param event Event
+ *
+ */
 //@ts-ignore
 function changeEpisode(event): void {
   router.push({
-    path: route.path,
+    name: 'Episode',
     query: {
       season: route.query.season,
       number: event.target.value,

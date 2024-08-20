@@ -1,5 +1,10 @@
 import { ShowDTO, Show } from '../interfaces/Data';
 
+/**
+ * Transform Show data to an object to be used the vue application
+ * @param data ShowDTO{}
+ *
+ */
 export function transformShowData(data: ShowDTO): Show | {} {
   if (!data) {
     return {};
