@@ -55,6 +55,12 @@ const store = useStore();
 let showList: Show[] = computed(() => store.getters['showStore/SHOWS']);
 let timeout: any = null;
 
+/**
+ * Fetch list of matching shows based on query string
+ * A simple timeout was set to control the when the search is done and avoid an api being call on every key press
+ * @param params Event
+ * 
+ */
 //@ts-ignore
 function searchShow(params): void {
   clearTimeout(timeout);

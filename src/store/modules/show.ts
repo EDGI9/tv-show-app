@@ -26,10 +26,20 @@ const mutations = {
 };
 
 const actions = {
+  /**
+   * Fetch individual Show data and store it in state
+   * @param id string
+   * 
+   */
   async GET_SHOW({ commit }: { commit: Store<showState>['commit'] }, id: string) {
     const data = await fetchShow(id);
     commit('SET_SHOW', data);
   },
+  /**
+   * Fetch list of Shows and store it in state
+   * @param query string
+   * 
+   */
   async GET_SHOWS({ commit }: { commit: Store<showState>['commit'] }, query: string) {
     const data = await fetchShows(query);
     commit('SET_SHOWS', data);
@@ -37,12 +47,21 @@ const actions = {
 };
 
 const getters = {
+  /**
+   * Get individual Show
+   */
   SHOW(state: showState): Show {
     return state.show;
   },
+  /**
+   * Get list of Shows
+   */
   SHOWS(state: showState): Show[] {
     return state.shows;
   },
+  /**
+   * Get list of Episodes
+   */
   EPISODES(state: showState) : Episode[] {
     return state.show.episodes;
   },

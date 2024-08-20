@@ -15,14 +15,31 @@ const router = createRouter({
 router.beforeEach(async (to, from, next) => {
   const store = useStore();
   try {
+
+    /**
+     * If the name is invalid or non existing throw error
+     * @param name string
+     */
     if (!to.name) {
       throw new Error('Invalid route');
     }
 
+    /**
+     * Fetch Show data
+     * @param name string
+     * @param id string
+     */
     if (to.name === 'Show' && to.params.id) {
       await store.dispatch('showStore/GET_SHOW', to.params.id);
     }
 
+    /**
+     * Fetch Show and singular Episode data
+     * @param name string
+     * @param id string
+     * @param season string
+     * @param number string 
+     */
     if (
       to.name === 'Episode' &&
       to.params.id &&
@@ -40,6 +57,9 @@ router.beforeEach(async (to, from, next) => {
 
     next();
   } catch (error) {
+    /**
+     * Redirect to Error page
+     */
     console.error('Error during navigation:', error);
     next('/error');
   }

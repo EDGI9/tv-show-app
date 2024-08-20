@@ -49,6 +49,11 @@ const router = useRouter();
 const show = computed(() => store.getters['showStore/SHOW']);
 const episodeList = computed(() => store.getters['showStore/EPISODES']);
 
+/**
+ * Change route to an episode page
+ * @param episode Episode
+ * 
+ */
 function goToEpisode(episode: Episode): void {
   router.push({
     name: 'Episode',

@@ -20,12 +20,24 @@ const state: episodeState = {
 };
 
 const mutations = {
+  /**
+   * Set state
+   * @param payload Episode
+   * 
+   */
   SET_EPISODE(state: episodeState, payload: Episode) {
     state.episode = {...payload};
   },
 };
 
 const actions = {
+  /**
+   * Fetch Episode data and store it in state
+   * @param id string
+   * @param seasonId string
+   * @param episodeId string
+   * 
+   */
   async GET_EPISODE({ commit }: { commit: Store<episodeState>['commit'] }, payload:{id:string, seasonId:string, episodeId:string}) {
     const data = await fetchEpisode(
       payload.id,
@@ -37,6 +49,9 @@ const actions = {
 };
 
 const getters = {
+  /**
+   * Get Episode data
+   */
   EPISODE(state: episodeState): Episode {
     return state.episode;
   },
