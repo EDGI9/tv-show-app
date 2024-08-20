@@ -34,14 +34,17 @@ A simple Vue 3 application that connects to public API and retrieves data relate
 <table>
     <tr>
         <td><img src="https://github.com/devicons/devicon/blob/master/icons/vuejs/vuejs-original.svg" title="Vue.js" width="200"/></td>
+        <td><img src="https://cdn.worldvectorlogo.com/logos/vuex-1.svg" title="Vuex 4" width="200"/></td>
         <td><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" title="Typescript" width="200"/></td>
+        <td><img src="https://github.com/tandpfun/skill-icons/blob/main/icons/HTML.svg" title="HTML" width="200"/></td>
         <td><img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" title="Tailwind" width="200"/></td>
         <td><img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg" title="CSS" width="200"/></td>
         <td><img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Vite-Dark.svg" title="Vite" width="200"/></td>
         <td><img src="https://github.com/devicons/devicon/blob/master/icons/vitest/vitest-original.svg" title="Vitest" width="200"/></td>
-        <td><img src="https://cdn.worldvectorlogo.com/logos/vuex-1.svg" title="Vuex 4" width="200"/></td>
         <td><img src="https://github.com/tandpfun/skill-icons/blob/main/icons/GithubActions-Dark.svg" title="Github Actions" width="200"/></td>
         <td><img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Docker.svg" title="Docker" width="200"/></td>
+        <td><img src="https://cdn.worldvectorlogo.com/logos/prettier-2.svg" title="Prettier" width="200"/></td>
+        <td><img src="https://cdn.worldvectorlogo.com/logos/eslint-1.svg" title="ESlint" width="200"/></td>
     </tr>
 <table>
 
