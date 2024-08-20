@@ -53,3 +53,32 @@ describe('fetchEpisodes', () => {
         expect(result).toEqual([]);
     });
 });
+
+describe('fetchEpisode', () => {
+    it('Should fetch single episode data and transform it', async () => {
+        const url : string = `/shows/${mockShowId}/episodebynumber?season=${mockSeasonId}&number=${mockEpisodeId}`;
+        const mockData : EpisodeDTO = validEpisodeDTO;
+        const transformedData : Episode = transformedValidEpisodeDTO;
+        //@ts-ignore vi.Mock
+        (get as vi.Mock).mockResolvedValue(mockData);
+        //@ts-ignore vi.Mock
+        (transformEpisodeData as vi.Mock).mockReturnValue(transformedData);
+
+        const result = await fetchEpisode(mockShowId, mockSeasonId, mockEpisodeId);
+
+        expect(get).toHaveBeenCalledWith(url);
+        expect(transformEpisodeData).toHaveBeenCalledWith(mockData);
+        expect(result).toEqual(transformedData);
+    });
+
+    it('Should return an empty object if no data is fetched', async () => {
+        //@ts-ignore vi.Mock
+        (get as vi.Mock).mockResolvedValue(null);
+        //@ts-ignore vi.Mock
+        (transformEpisodeData as vi.Mock).mockReturnValue({});
+
+        const result = await fetchEpisode(mockShowId, mockSeasonId, mockEpisodeId);
+
+        expect(result).toEqual({});
+    });
+});
