@@ -5,6 +5,10 @@ import {
   invalidShowDTO as mockInvalidShowDTO,
   validShowListDTO as mockValidShowListDTO,
 } from '../../__mocks__/middleware/showListDto';
+import {
+  transformedValidShowDTO as mockTransformedValidShowDTO,
+  transformedInvalidShowDTO as mockTransformedInvalidShowDTO,
+} from '../../__mocks__/middleware/showDto';
 
 const validShowListDTO: ShowListDTO[] = mockValidShowListDTO;
 
@@ -14,13 +18,7 @@ describe('transformShowListData', () => {
   it('should transform valid ShowListDTO array into Show array', () => {
     const result = transformShowListData(validShowListDTO);
     const expectedResult: Show[] = [
-      {
-        id: '1',
-        name: 'My Show',
-        summary: 'Show summary',
-        image: 'http://image.url',
-        rating: 29,
-      },
+      mockTransformedValidShowDTO
     ];
 
     expect(result).toEqual(expectedResult);
@@ -30,13 +28,7 @@ describe('transformShowListData', () => {
     //@ts-ignore
     const result = transformShowListData(invalidShowListDTO);
     const expectedResult: Show[] = [
-      {
-        id: '1',
-        name: '',
-        summary: '',
-        image: '',
-        rating: 0,
-      },
+      mockTransformedInvalidShowDTO
     ];
 
     expect(result).toEqual(expectedResult);

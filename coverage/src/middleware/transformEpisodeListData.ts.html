@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/middleware/trasnformEpisodeData.ts</title>
+    <title>Code coverage report for src/middleware/transformEpisodeListData.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,20 +19,20 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/middleware</a> trasnformEpisodeData.ts</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/middleware</a> transformEpisodeListData.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>19/19</span>
+                <span class='fraction'>17/17</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.3% </span>
+                <span class="strong">93.33% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>12/13</span>
+                <span class='fraction'>14/15</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>19/19</span>
+                <span class='fraction'>17/17</span>
             </div>
         
             
@@ -86,49 +86,58 @@
 <a name='L21'></a><a href='#L21'>21</a>
 <a name='L22'></a><a href='#L22'>22</a>
 <a name='L23'></a><a href='#L23'>23</a>
-<a name='L24'></a><a href='#L24'>24</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Episode, EpisodeDTO } from '../interfaces/Data';
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { EpisodeDTO, Episode } from '../interfaces/Data';
 &nbsp;
-export function transformEpisodeData(data: EpisodeDTO): Episode | {} {
+/**
+ * Transform a list of Episode data to an array of Episode data to be used by the vue application
+ * @param data EpisodeDTO[]
+ *
+ */
+export function transformEpisodeListData(data: EpisodeDTO[]): Episode[] | [] {
   if (!data) {
-    return {};
+    return [];
   }
 &nbsp;
-  const { id, name, summary, image, season, airdate, runtime, rating, number } =
-    data;
-  const processedData: Episode = {
-    id: <span class="branch-0 cbranch-no" title="branch not covered" >id || '',</span>
-    name: name || '',
-    summary: summary || '',
-    image: image?.original || '',
-    season: season || '',
-    number: number || '',
-    airdate: airdate || '',
-    runtime: runtime || 0,
-    rating: rating?.average || 0,
-  };
+  const processedData: Episode[] = data.map((item: EpisodeDTO) =&gt; ({
+    id: item.<span class="branch-0 cbranch-no" title="branch not covered" >id || '',</span>
+    name: item.name || '',
+    summary: item.summary || '',
+    image: item.image?.original || '',
+    season: item.season || '',
+    number: item.number || '',
+    airdate: item.airdate || '',
+    runtime: item.runtime || 0,
+    rating: item.rating?.average || 0,
+  }));
 &nbsp;
   return processedData;
 }
@@ -139,7 +148,7 @@ export function transformEpisodeData(data: EpisodeDTO): Episode | {} {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-08-19T22:59:59.050Z
+                at 2024-08-20T12:03:08.066Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

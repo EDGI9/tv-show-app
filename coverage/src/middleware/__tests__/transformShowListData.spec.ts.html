@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/middleware/__tests__/trasnformShowListData.spec.ts</title>
+    <title>Code coverage report for src/middleware/__tests__/transformShowListData.spec.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../prettify.css" />
     <link rel="stylesheet" href="../../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../index.html">All files</a> / <a href="index.html">src/middleware/__tests__</a> trasnformShowListData.spec.ts</h1>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">src/middleware/__tests__</a> transformShowListData.spec.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>41/41</span>
+                <span class='fraction'>34/34</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>41/41</span>
+                <span class='fraction'>34/34</span>
             </div>
         
             
@@ -122,30 +122,19 @@
 <a name='L57'></a><a href='#L57'>57</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -159,6 +148,16 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -175,10 +174,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import { describe, it, expect } from 'vitest';
-import { transformShowListData } from '../../middleware/trasnformShowListData';
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { describe, it, expect } from 'vitest';
+import { transformShowListData } from '../transformShowListData';
 import { ShowListDTO, Show } from '../../interfaces/Data';
-import  {invalidShowDTO as mockInvalidShowDTO, validShowListDTO as mockValidShowListDTO } from "../../__mocks__/middleware/showListDto";
+import {
+  invalidShowDTO as mockInvalidShowDTO,
+  validShowListDTO as mockValidShowListDTO,
+} from '../../__mocks__/middleware/showListDto';
+import {
+  transformedValidShowDTO as mockTransformedValidShowDTO,
+  transformedInvalidShowDTO as mockTransformedInvalidShowDTO,
+} from '../../__mocks__/middleware/showDto';
 &nbsp;
 const validShowListDTO: ShowListDTO[] = mockValidShowListDTO;
 &nbsp;
@@ -187,13 +194,9 @@ const invalidShowListDTO = mockInvalidShowDTO;
 describe('transformShowListData', () =&gt; {
   it('should transform valid ShowListDTO array into Show array', () =&gt; {
     const result = transformShowListData(validShowListDTO);
-    const expectedResult: Show[] = [{
-        id: '1',
-        name: 'My Show',
-        summary: 'Show summary',
-        image: "http://image.url",
-        rating: 29
-      }];
+    const expectedResult: Show[] = [
+      mockTransformedValidShowDTO
+    ];
 &nbsp;
     expect(result).toEqual(expectedResult);
   });
@@ -201,13 +204,9 @@ describe('transformShowListData', () =&gt; {
   it('should return default values for missing properties in the ShowListDTO array', () =&gt; {
     //@ts-ignore
     const result = transformShowListData(invalidShowListDTO);
-    const expectedResult: Show[] = [{
-        id: '1',
-        name: '',
-        summary: '',
-        image: "",
-        rating: 0
-    }];
+    const expectedResult: Show[] = [
+      mockTransformedInvalidShowDTO
+    ];
 &nbsp;
     expect(result).toEqual(expectedResult);
   });
@@ -231,14 +230,15 @@ describe('transformShowListData', () =&gt; {
 &nbsp;
     expect(result).toEqual([]);
   });
-});</pre></td></tr></table></pre>
+});
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-08-19T22:59:59.050Z
+                at 2024-08-20T12:03:08.066Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
