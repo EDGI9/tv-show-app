@@ -17,9 +17,7 @@ const invalidShowListDTO = mockInvalidShowDTO;
 describe('transformShowListData', () => {
   it('should transform valid ShowListDTO array into Show array', () => {
     const result = transformShowListData(validShowListDTO);
-    const expectedResult: Show[] = [
-      mockTransformedValidShowDTO
-    ];
+    const expectedResult: Show[] = [mockTransformedValidShowDTO];
 
     expect(result).toEqual(expectedResult);
   });
@@ -27,9 +25,7 @@ describe('transformShowListData', () => {
   it('should return default values for missing properties in the ShowListDTO array', () => {
     //@ts-ignore
     const result = transformShowListData(invalidShowListDTO);
-    const expectedResult: Show[] = [
-      mockTransformedInvalidShowDTO
-    ];
+    const expectedResult: Show[] = [mockTransformedInvalidShowDTO];
 
     expect(result).toEqual(expectedResult);
   });

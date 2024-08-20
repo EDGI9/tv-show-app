@@ -5,13 +5,22 @@ import { fetchEpisodes } from '../episodeApi.ts';
 import { transformShowData } from '../../middleware/transformShowData.ts';
 import { transformShowListData } from '../../middleware/transformShowListData.ts';
 
-import { validShowDTO , transformedValidShowDTO } from "../../__mocks__/middleware/showDto.ts";
-import { validEpisodeDTO } from "../../__mocks__/middleware/episodeDto.ts";
+import {
+  validShowDTO,
+  transformedValidShowDTO,
+} from '../../__mocks__/middleware/showDto.ts';
+import { validEpisodeDTO } from '../../__mocks__/middleware/episodeDto.ts';
 
-import { ShowDTO, ShowListDTO, ShowDetails, Show, EpisodeDTO } from '../../interfaces/Data';
+import {
+  ShowDTO,
+  ShowListDTO,
+  ShowDetails,
+  Show,
+  EpisodeDTO,
+} from '../../interfaces/Data';
 
-const mockShowId : string = '1';
-const mockQuery : string = 'test';
+const mockShowId: string = '1';
+const mockQuery: string = 'test';
 
 vi.mock('../index.ts', () => ({
   get: vi.fn(),
@@ -31,12 +40,15 @@ vi.mock('../../middleware/transformShowListData.ts', () => ({
 
 describe('fetchShow', () => {
   it('Should fetch show details and transform them, including episodes', async () => {
-    const url : string = `/shows/${mockShowId}`;
+    const url: string = `/shows/${mockShowId}`;
     const mockData: ShowDTO = validShowDTO;
     const transformedShow: Show = transformedValidShowDTO;
     const mockEpisodes: EpisodeDTO[] = [validEpisodeDTO];
-    const expectedShowData : ShowDetails = { ...transformedShow, episodes: mockEpisodes };
-    
+    const expectedShowData: ShowDetails = {
+      ...transformedShow,
+      episodes: mockEpisodes,
+    };
+
     //@ts-ignore vi.Mock
     (get as vi.Mock).mockResolvedValue(mockData);
     //@ts-ignore vi.Mock
@@ -64,10 +76,10 @@ describe('fetchShow', () => {
 
 describe('fetchShows', () => {
   it('Should fetch shows based on query and transform them', async () => {
-    const url : string = `/search/shows?q=${mockQuery}`;
+    const url: string = `/search/shows?q=${mockQuery}`;
     const mockData: ShowListDTO[] = [{ show: validShowDTO }];
     const transformedData: Show[] = [transformedValidShowDTO];
-    
+
     //@ts-ignore vi.Mock
     (get as vi.Mock).mockResolvedValue(mockData);
     //@ts-ignore vi.Mock
