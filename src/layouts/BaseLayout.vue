@@ -27,7 +27,7 @@
   <footer
     class="flex gap-12 px-12 items-center sticky items-center justify-center text-primary backdrop-blur-md bg-white/10"
   >
-    <Title text="Footer" type="h2" class="prose prose-headings:text-white" />
+    <Title text="Edgar Dias 2024" type="h6" class="prose prose-headings:text-white" />
   </footer>
 </template>
 <script setup lang="ts">
