@@ -42,7 +42,7 @@ export type EpisodeCard = {
 export type ListComponent = {
   items: ListItem[];
   callback: (event: Event) => void;
-  selectedItem: string;
+  selectedItem: LocationQueryValue;
 };
 
 export type ShowCard = {
