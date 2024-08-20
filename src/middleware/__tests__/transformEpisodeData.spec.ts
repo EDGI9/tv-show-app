@@ -5,7 +5,7 @@ import {
   invalidEpisodeDTO as mockInvalidEpisodeDTO,
   validEpisodeDTO as mockValidEpisodeDTO,
   transformedValidEpisodeDTO as mockTransformedValidEpisodeDTO,
-  transformedInvalidEpisodeDTO as mockTransformedInvalidEpisodeDTO
+  transformedInvalidEpisodeDTO as mockTransformedInvalidEpisodeDTO,
 } from '../../__mocks__/middleware/episodeDto';
 
 const validEpisodeDTO: EpisodeDTO = mockValidEpisodeDTO;
