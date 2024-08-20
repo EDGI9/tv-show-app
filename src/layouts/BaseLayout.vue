@@ -45,7 +45,7 @@ const transition = computed(() => route.meta.transition);
 
 /**
  * Redirect to Homepage
- * 
+ *
  */
 function goToHome(): void {
   router.push({ name: 'HomeChild' });

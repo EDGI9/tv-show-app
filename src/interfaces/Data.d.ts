@@ -31,13 +31,13 @@ export type Show = {
 };
 
 export type ShowDetails = {
-    id: string;
-    name: string;
-    summary: string;
-    image: string;
-    rating: number;
-    episodes: object[Episode];
-  };
+  id: string;
+  name: string;
+  summary: string;
+  image: string;
+  rating: number;
+  episodes: object[Episode];
+};
 
 export type Episode = {
   id: string;

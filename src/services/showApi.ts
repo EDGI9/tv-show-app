@@ -4,7 +4,7 @@ import { transformShowData } from '../middleware/transformShowData.ts';
 import { transformShowListData } from '../middleware/transformShowListData.ts';
 import { Show, ShowDetails, ShowDTO, ShowListDTO } from '../interfaces/Data';
 
- /**
+/**
  * Fetches show details from api and transforms it to a different data object
  * @param id string
  */
@@ -13,7 +13,7 @@ export const fetchShow = async (id: string): Promise<ShowDetails | {}> => {
   if (!data) {
     return {};
   }
- 
+
   const show = transformShowData(data);
   const episodes = await fetchEpisodes(id);
 

@@ -4,7 +4,6 @@ A simple Vue 3 application that connects to public API and retrieves data relate
 
 ![image](https://github.com/EDGI9/tv-show-app/blob/main/public/website_preview.webp?raw=true)
 
-
 ## Pages
 
 - Homepage - Search for Shows based on Show name (Shortcut to a particular Show available)
@@ -18,9 +17,11 @@ A simple Vue 3 application that connects to public API and retrieves data relate
 [Tv-show-app](https://edgi9.github.io/tv-show-app/)
 
 ## Language
+
 - Typescript
 
 ## Tools
+
 - Build tool ( vite )
 - Testing ( vitest, vue-test-utils)
 - Framework ( Vue 3 - Composition API )
@@ -48,39 +49,44 @@ A simple Vue 3 application that connects to public API and retrieves data relate
     </tr>
 <table>
 
-
 ## Project setup
+
 ```
 npm install
 ```
 
 ### Compiles and hot-reloads for development
+
 ```
 npm run dev
 ```
 
 ### Compiles and minifies for production
+
 ```
 npm run build
 ```
 
 ### Run tests
+
 ```
 npm run test
 ```
 
 ### Run test coverage
+
 ```
 npm run test:coverage
 ```
 
 ### Run Lint
+
 ```
 npm run lint
 ```
 
 ### Run Format
+
 ```
 npm run format
 ```
-

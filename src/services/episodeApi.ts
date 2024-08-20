@@ -7,9 +7,9 @@ import { Episode, EpisodeDTO, Show } from '../interfaces/Data';
 /**
  * Async function that fetches a list of Episode data from the api and returns an array of transformed data objects
  * @param showId string
- * 
+ *
  */
-export const fetchEpisodes = async (showId: string): Promise< Show[] | []> => {
+export const fetchEpisodes = async (showId: string): Promise<Show[] | []> => {
   const data: EpisodeDTO[] = await get(`/shows/${showId}/episodes`);
   return transformEpisodeListData(data);
 };
@@ -19,7 +19,7 @@ export const fetchEpisodes = async (showId: string): Promise< Show[] | []> => {
  * @param showId string
  * @param seasonId string
  * @param episodeId string
- * 
+ *
  */
 export const fetchEpisode = async (
   showId: string,

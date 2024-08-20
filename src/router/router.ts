@@ -15,7 +15,6 @@ const router = createRouter({
 router.beforeEach(async (to, from, next) => {
   const store = useStore();
   try {
-
     /**
      * If the name is invalid or non existing throw error
      * @param name string
@@ -38,7 +37,7 @@ router.beforeEach(async (to, from, next) => {
      * @param name string
      * @param id string
      * @param season string
-     * @param number string 
+     * @param number string
      */
     if (
       to.name === 'Episode' &&

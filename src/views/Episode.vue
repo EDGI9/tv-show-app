@@ -43,7 +43,7 @@ const episode = computed(() => store.getters['episodeStore/EPISODE']);
 
 /**
  * Fetch the list of Episodes and adapting slightly its data for the specific use of this component
- * 
+ *
  */
 const episodeList = computed(() =>
   store.getters['showStore/EPISODES'].map((item: Episode) => ({
@@ -60,7 +60,7 @@ const selectedEpisode = computed(() => {
 /**
  * Change route to a different episode
  * @param event Event
- * 
+ *
  */
 //@ts-ignore
 function changeEpisode(event): void {

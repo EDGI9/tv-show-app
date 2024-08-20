@@ -1,7 +1,10 @@
 import { describe, it, expect } from 'vitest';
 import { transformShowData } from '../../middleware/transformShowData';
 import { Show, ShowDTO } from '../../interfaces/Data';
-import  {invalidShowDTO as mockInvalidShowDTO, validShowDTO as mockValidShowDTO} from "../../__mocks__/middleware/showDto";
+import {
+  invalidShowDTO as mockInvalidShowDTO,
+  validShowDTO as mockValidShowDTO,
+} from '../../__mocks__/middleware/showDto';
 
 const validShowDTO: ShowDTO = mockValidShowDTO;
 
@@ -16,7 +19,7 @@ describe('transformShowData', () => {
       summary: 'Show summary',
       image: 'http://image.url',
       rating: 29,
-    }
+    };
 
     expect(result).toEqual(expectedResult);
   });
@@ -31,7 +34,7 @@ describe('transformShowData', () => {
       summary: '',
       image: '',
       rating: 0,
-    }
+    };
 
     expect(result).toEqual(expectedResult);
   });
